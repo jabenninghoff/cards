@@ -1,9 +1,12 @@
+^_pkgdown\.yml$
 ^\.github$
 ^\.lintr$
 ^\.Rproj\.user$
 ^cards\.Rproj$
 ^codecov\.yml$
+^docs$
 ^LICENSE\.md$
+^pkgdown$
 ^README\.Rmd$
 ^renv\.lock$
 ^renv$
