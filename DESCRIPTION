@@ -1,10 +1,10 @@
 Package: cards
-Title: What the Package Does (One Line, Title Case)
+Title: Card Simulation Tools
 Version: 0.0.0.9000
 Authors@R: 
     person("John", "Benninghoff", , "jbenninghoff@mac.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-6230-4742"))
-Description: What the package does (one paragraph).
+Description: Tools for card game simulations, written in base R.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
