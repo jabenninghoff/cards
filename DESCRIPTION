@@ -14,8 +14,12 @@ Suggests:
     desc,
     devtools,
     DT,
+    fs,
+    knitr,
+    pkgdown,
     pkgload,
     rdev (>= 1.5.8),
+    rmarkdown,
     spelling,
     testthat (>= 3.0.0),
     withr
