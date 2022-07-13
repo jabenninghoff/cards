@@ -15,3 +15,21 @@ new_deck <- function() {
     KEEP.OUT.ATTRS = FALSE, stringsAsFactors = TRUE
   )
 }
+
+#' Deal a hand of cards
+#'
+#' Return a five card hand from a deck of cards, as a `data.frame` with `rank` and `suit`.
+#'
+#' Uses [sample()] to select 5 random cards.
+#'
+#' @param d a deck created by [new_deck()].
+#'
+#' @return a `data.frame` containing 5 random cards.
+#' @export
+#'
+#' @examples
+#' deck <- new_deck()
+#' deal_hand(deck)
+deal_hand <- function(d) {
+  d[sample(nrow(d), 5), ]
+}
