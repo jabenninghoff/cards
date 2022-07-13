@@ -1,2 +1,9 @@
-^cards\.Rproj$
+^renv$
+^renv\.lock$
+^\.github$
+^\.lintr$
 ^\.Rproj\.user$
+^cards\.Rproj$
+^LICENSE\.md$
+^README\.Rmd$
+^TODO\.md$
