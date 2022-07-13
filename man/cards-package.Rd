@@ -4,9 +4,9 @@
 \name{cards-package}
 \alias{cards}
 \alias{cards-package}
-\title{cards: What the Package Does (One Line, Title Case)}
+\title{cards: Card Simulation Tools}
 \description{
-What the package does (one paragraph).
+Tools for card game simulations, written in base R.
 }
 \seealso{
 Useful links:
