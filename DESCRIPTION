@@ -14,10 +14,13 @@ Suggests:
     devtools,
     pkgload,
     rdev (>= 1.5.8),
-    testthat (>= 3.0.0)
+    spelling,
+    testthat (>= 3.0.0),
+    withr
 URL: https://jabenninghoff.github.io/cards/,
     https://github.com/jabenninghoff/cards
 BugReports: https://github.com/jabenninghoff/cards/issues
 Remotes: 
     jabenninghoff/rdev
 Config/testthat/edition: 3
+Language: en-US
