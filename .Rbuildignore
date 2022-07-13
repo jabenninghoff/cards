@@ -1,9 +1,10 @@
-^renv$
-^renv\.lock$
 ^\.github$
 ^\.lintr$
 ^\.Rproj\.user$
 ^cards\.Rproj$
+^codecov\.yml$
 ^LICENSE\.md$
 ^README\.Rmd$
+^renv\.lock$
+^renv$
 ^TODO\.md$
