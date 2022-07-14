@@ -36,3 +36,18 @@ test_that("deal_hand returns 5 cards from a standard deck", {
   expect_identical(nrow(hand), 5L)
   expect_identical(hand, standard_deck[rownames(hand), ])
 })
+
+# eval_hand
+test_that("eval_hand returns correct hand rankings", {
+  expect_identical(eval_hand(standard_deck[48:52, ]), "royal_flush")
+  expect_identical(eval_hand(standard_deck[47:51, ]), "straight_flush")
+  expect_identical(eval_hand(standard_deck[c(13, 26, 39, 51, 52), ]), "four_ofakind")
+  expect_identical(eval_hand(standard_deck[c(13, 26, 38, 51, 52), ]), "full_house")
+  expect_identical(eval_hand(standard_deck[c(47, 49:52), ]), "flush")
+  expect_identical(eval_hand(standard_deck[c(35, 49:52), ]), "straight")
+  expect_identical(eval_hand(standard_deck[c(11, 26, 39, 51, 52), ]), "three_ofakind")
+  expect_identical(eval_hand(standard_deck[c(11, 25, 39, 51, 52), ]), "two_pair")
+  expect_identical(eval_hand(standard_deck[c(33:36, 49), ]), "jacks_better")
+  expect_identical(eval_hand(standard_deck[c(32:35, 48), ]), "one_pair")
+  expect_identical(eval_hand(standard_deck[c(34, 49:52), ]), "high_card")
+})
