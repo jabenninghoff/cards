@@ -36,7 +36,7 @@ deal_hand <- function(d) {
 
 #' Evaluate a poker hand
 #'
-#' Evaluate the rank of a five card poker hand.
+#' Evaluate the rank category of a five card poker hand.
 #'
 #' Uses [order()] and [rle()] to identify flushes, straights, pairs, three, and four of a kind.
 #'

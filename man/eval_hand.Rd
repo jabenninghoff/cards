@@ -13,7 +13,7 @@ eval_hand(h)
 string hand rank
 }
 \description{
-Evaluate the rank of a five card poker hand.
+Evaluate the rank category of a five card poker hand.
 }
 \details{
 Uses \code{\link[=order]{order()}} and \code{\link[=rle]{rle()}} to identify flushes, straights, pairs, three, and four of a kind.
