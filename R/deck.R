@@ -50,18 +50,15 @@ deal_hand <- function(d) {
 #' (hand <- deal_hand(deck))
 #' eval_hand(hand)
 eval_hand <- function(h) { # nolint: cyclocomp_linter.
-  first <- function(x) utils::head(x, 1)
-  last <- function(x) utils::tail(x, 1)
-
   # sort hand with lowest rank first
   h <- h[order(h$rank), ]
   r <- rle(as.integer(h$rank))
 
-  is_flush <- first(rle(as.integer(h$suit))$lengths) == 5L
-  is_straight <- (last(r$values) - first(r$values) == 4L) ||
-    (length(r$values) == 5 && last(r$values == 13L) && r$values[[4]] == 4L) # ace low
+  is_flush <- rle(as.integer(h$suit))$lengths[[1]] == 5L
+  is_straight <- (length(r$values) == 5 && r$values[[5]] - r$values[[1]] == 4L) ||
+    (length(r$values) == 5 && r$values[[5]] == 13L && r$values[[4]] == 4L) # ace low
 
-  if (is_flush && is_straight && first(r$values) == 9L) {
+  if (is_flush && is_straight && r$values[[1]] == 9L) {
     return("royal_flush")
   } else if (is_flush && is_straight) {
     return("straight_flush")

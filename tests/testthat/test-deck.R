@@ -51,4 +51,7 @@ test_that("eval_hand returns correct hand rankings", {
   expect_identical(eval_hand(standard_deck[c(33:36, 49), ]), "jacks_better")
   expect_identical(eval_hand(standard_deck[c(32:35, 48), ]), "one_pair")
   expect_identical(eval_hand(standard_deck[c(34, 49:52), ]), "high_card")
+
+  # regressions
+  expect_identical(eval_hand(standard_deck[c(3, 4, 14, 31, 42), ]), "one_pair")
 })
