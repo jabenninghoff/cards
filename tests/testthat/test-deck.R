@@ -37,6 +37,14 @@ test_that("deal_hand returns 5 cards from a standard deck", {
   expect_identical(hand, standard_deck[rownames(hand), ])
 })
 
+# print_hand
+test_that("print_hand returns a sorted character vector", {
+  hand <- standard_deck[c(17, 11, 1, 38, 24), ]
+  expect_identical(print_hand(hand), "2C 5D QC QD KH")
+  expect_identical(print_hand(hand, collapse = TRUE), "2C 5D QC QD KH")
+  expect_identical(print_hand(hand, collapse = FALSE), c("2C", "5D", "QC", "QD", "KH"))
+})
+
 # eval_hand
 test_that("eval_hand returns correct hand rankings", {
   expect_identical(eval_hand(standard_deck[48:52, ]), "royal_flush")
