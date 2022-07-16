@@ -34,6 +34,30 @@ deal_hand <- function(d) {
   d[sample(nrow(d), 5), ]
 }
 
+#' Print a hand of cards
+#'
+#' Returns a character vector of sorted cards, collapsed by default.
+#'
+#' @param h a `data.frame` of 5 cards.
+#' @param collapse if `TRUE`, collapse the character vector.
+#'
+#' @return character vector of sorted cards.
+#' @export
+#'
+#' @examples
+#' deck <- new_deck()
+#' (hand <- deal_hand(deck))
+#' print_hand(hand)
+print_hand <- function(h, collapse = TRUE) {
+  h <- h[order(h$rank), ]
+  p <- vapply(1:5, function(x) paste0(h[[x, "rank"]], h[[x, "suit"]]), character(1))
+  if (collapse) {
+    return(paste0(p, collapse = " "))
+  } else {
+    return(p)
+  }
+}
+
 #' Evaluate a poker hand
 #'
 #' Evaluate the rank category of a five card poker hand.
