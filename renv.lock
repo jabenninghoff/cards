@@ -719,14 +719,14 @@
     },
     "pkgdown": {
       "Package": "pkgdown",
-      "Version": "2.0.5",
+      "Version": "2.0.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "584e7c13c2cb3a1d4b32166dc411f3bb",
+      "Hash": "f958d0b2a5dabc5ffd414f062b1ffbe7",
       "Requirements": [
         "bslib",
         "callr",
-        "crayon",
+        "cli",
         "desc",
         "digest",
         "downlit",
@@ -1016,10 +1016,10 @@
     },
     "sass": {
       "Package": "sass",
-      "Version": "0.4.1",
+      "Version": "0.4.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "f37c0028d720bab3c513fd65d28c7234",
+      "Hash": "1b191143d7d3444d504277843f3a95fe",
       "Requirements": [
         "R6",
         "fs",
