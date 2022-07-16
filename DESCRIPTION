@@ -10,6 +10,7 @@ URL: https://jabenninghoff.github.io/cards/,
     https://github.com/jabenninghoff/cards
 BugReports: https://github.com/jabenninghoff/cards/issues
 Suggests: 
+    bench,
     covr,
     desc,
     devtools,
