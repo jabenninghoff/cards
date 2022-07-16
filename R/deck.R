@@ -58,9 +58,10 @@ eval_hand <- function(h) { # nolint: cyclocomp_linter.
   r <- rle(as.integer(h$rank))
 
   is_flush <- first(rle(as.integer(h$suit))$lengths) == 5L
-  is_straight <- last(r$values) - first(r$values) == 4L
+  is_straight <- (last(r$values) - first(r$values) == 4L) ||
+    (length(r$values) == 5 && last(r$values == 13L) && r$values[[4]] == 4L) # ace low
 
-  if (is_flush && is_straight && last(r$values) == 13L) {
+  if (is_flush && is_straight && first(r$values) == 9L) {
     return("royal_flush")
   } else if (is_flush && is_straight) {
     return("straight_flush")
