@@ -48,10 +48,16 @@ renv::install("jabenninghoff/cards")
 - Changelog: See "Changelog" or `NEWS.md`.
 - Planned: [TODO](TODO.md)
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+The cards package supports random draws and evaluation of poker rank [category](https://en.wikipedia.org/wiki/List_of_poker_hands):
 
 ```{r example}
-# basic example code
+library(cards)
+
+deck <- new_deck()
+replicate(50, {
+  hand <- deal_hand(deck)
+  paste0(print_hand(hand), ": ", eval_hand(hand))
+})
 ```
