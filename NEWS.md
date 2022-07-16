@@ -1,3 +1,7 @@
+# cards 0.1.1
+
+* Added notebook to test performance using `bench::mark()`
+
 # cards 0.1.0
 
 Initial release. Includes basic functions for poker simulation:
