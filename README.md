@@ -37,8 +37,8 @@ renv::install("jabenninghoff/cards")
 
 ## Development
 
--   Changelog: See “Changelog” or `NEWS.md`.
--   Planned: [TODO](TODO.md)
+- Changelog: See “Changelog” or `NEWS.md`.
+- Planned: [TODO](TODO.md)
 
 ## Usage
 
@@ -53,29 +53,29 @@ replicate(50, {
   hand <- deal_hand(deck)
   paste0(print_hand(hand), ": ", eval_hand(hand))
 })
-#>  [1] "2H 7D 9H JH KD: high_card"     "2D 7C QC QD KD: jacks_better" 
-#>  [3] "4C 6D 9C QS AD: high_card"     "2S 8H 10C JS KD: high_card"   
-#>  [5] "4D 4C 8C JH QH: one_pair"      "2H 7H KC AC AS: jacks_better" 
-#>  [7] "2C 2H 6C QD QS: two_pair"      "2D 7C 8D JC JS: jacks_better" 
-#>  [9] "2H 3S 5D 7D JS: high_card"     "5S JS JC JH AS: three_ofakind"
-#> [11] "5D 8H 9D QC AD: high_card"     "5D 6H 7C JC JS: jacks_better" 
-#> [13] "2S 5S 7H 7D 10D: one_pair"     "2D 3H 5S 6S QD: high_card"    
-#> [15] "2D 4H 4S JC KS: one_pair"      "4H 5D 8S JH KC: high_card"    
-#> [17] "3H 7H 8S 9S AH: high_card"     "2D 3C 5D 6C 10D: high_card"   
-#> [19] "2C 2D 7S 10S QC: one_pair"     "2D 8C 9D 10S KD: high_card"   
-#> [21] "2C 3H JC KC KD: jacks_better"  "3S 5S 8S JS AC: high_card"    
-#> [23] "4C 8D 9H 10C AC: high_card"    "3H 5S 6D 8H 9H: high_card"    
-#> [25] "3C 6H 7D 8D 9C: high_card"     "QD KD KH AH AC: two_pair"     
-#> [27] "3S 7S 9C 10C KD: high_card"    "10H 10S JD JS QH: two_pair"   
-#> [29] "3C 4D 7S KH AC: high_card"     "6D 7S 10H QC AS: high_card"   
-#> [31] "2C 2H 9C KH AH: one_pair"      "10H QC KH AC AS: jacks_better"
-#> [33] "3C 3S 5C 5D KC: two_pair"      "4S 6D 6S 7C 8D: one_pair"     
-#> [35] "2C 3D 5C QD QC: jacks_better"  "8S JS QH KC KH: jacks_better" 
-#> [37] "3H 5S 6S 9D 9C: one_pair"      "2C 2D 5D JD KC: one_pair"     
-#> [39] "2S 4D 4C 8S QD: one_pair"      "4C 7D 7C JS KH: one_pair"     
-#> [41] "8C 9H 10H QH AS: high_card"    "2S 3C 6D 9D JH: high_card"    
-#> [43] "3S 4H 7C QS KS: high_card"     "2C 7D 8S JD QD: high_card"    
-#> [45] "4C 5S 6H 6D 7H: one_pair"      "3C 5H 7D 8S AS: high_card"    
-#> [47] "6D JD QC QH AD: jacks_better"  "3S 3H 4C 10S AD: one_pair"    
-#> [49] "2D 5H 5C 8H 9H: one_pair"      "3D 4D 6S 8C JC: high_card"
+#>  [1] "3S 8S 8C JS QC: one_pair"      "5D 6H 7C JD QH: high_card"    
+#>  [3] "3D 4H 9C 10H AH: high_card"    "3H 4C 6H 9S 9D: one_pair"     
+#>  [5] "4C 7C 8C 9C AH: high_card"     "4S 5C 8H 10D KD: high_card"   
+#>  [7] "3D 5S 6S 9S AH: high_card"     "2S 2D 6D 9H KD: one_pair"     
+#>  [9] "8D 10C 10S QH KH: one_pair"    "2D 3H 9C 10H 10S: one_pair"   
+#> [11] "3C 8H JH QS KD: high_card"     "3H 6S 9D JC KD: high_card"    
+#> [13] "2H 3D 3H 6D AH: one_pair"      "8D 10D JH JD AC: jacks_better"
+#> [15] "2S 3H 10H KD AH: high_card"    "4D 10H QC AH AD: jacks_better"
+#> [17] "2H 4S 5H 7C 8D: high_card"     "5C 7S JS KS AC: high_card"    
+#> [19] "5S JH QH QC AS: jacks_better"  "3C 5S 10H JD KD: high_card"   
+#> [21] "6H 6D 8C 10C JH: one_pair"     "3D 5C 8D 10D JC: high_card"   
+#> [23] "5D 9S JS QD KS: high_card"     "2S 5H 8S KC KS: jacks_better" 
+#> [25] "2S 7C 8C QH KD: high_card"     "4S 6D 6H 10H AH: one_pair"    
+#> [27] "9D 9C 9H KS AD: three_ofakind" "5S 7H JS JC JH: three_ofakind"
+#> [29] "2C 3H 3D 4S 7H: one_pair"      "2C 5C 7D 8H KD: high_card"    
+#> [31] "2H 3C 6S 6C JS: one_pair"      "2S 5H 5C 6S 7D: one_pair"     
+#> [33] "2D 5D JH AS AC: jacks_better"  "3C 6C 9H AH AD: jacks_better" 
+#> [35] "2C 3C 4H 10D QH: high_card"    "2H 2C 3C 9S KS: one_pair"     
+#> [37] "4S 5S 9H QH AS: high_card"     "4D 5D 8D 10H JC: high_card"   
+#> [39] "3H 5D 8D 10C QS: high_card"    "2H 2S 5H 9H KH: one_pair"     
+#> [41] "3S 4D 5S QS KH: high_card"     "3D 6D 9C 10H AC: high_card"   
+#> [43] "3H 4H 5H QS AC: high_card"     "3D 4C 5D 5H 6H: one_pair"     
+#> [45] "3C 5H 8H KD AD: high_card"     "6C 10H 10S KS AH: one_pair"   
+#> [47] "3H 4C 5S 9S AH: high_card"     "3C 5S 6C JD KS: high_card"    
+#> [49] "7S 9C 10D JH QS: high_card"    "3H 4D 6S 9D QD: high_card"
 ```
