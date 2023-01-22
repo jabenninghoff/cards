@@ -1,3 +1,7 @@
+# cards 0.1.2
+
+* Maintenance update
+
 # cards 0.1.1
 
 * Added notebook to test performance using `bench::mark()`
