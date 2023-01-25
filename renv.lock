@@ -918,15 +918,15 @@
     },
     "rdev": {
       "Package": "rdev",
-      "Version": "1.6.3",
+      "Version": "1.6.4",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteUsername": "jabenninghoff",
       "RemoteRepo": "rdev",
       "RemoteRef": "HEAD",
-      "RemoteSha": "91c0e381c85d3a8f738306d9cd6db425c85987c3",
+      "RemoteSha": "8f730c2854e6a69c7594983b0e3bb6810c0a6cf5",
       "RemoteHost": "api.github.com",
-      "Hash": "a62ee5cad1b021490257d602652f9a91",
+      "Hash": "9b71f77f661e90f174de6f70a6f171a6",
       "Requirements": [
         "cli",
         "curl",
