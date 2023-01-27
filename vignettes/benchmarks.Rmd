@@ -1,9 +1,20 @@
 ---
-title: "Package Benchmarks"
-output: html_notebook
+title: "Benchmarks"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Benchmarks}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-Measure `cards` performance using `bench::mark()`.
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Measure the performance of different implementations of `cards` using `bench::mark()`.
 
 ```{r setup, message = FALSE, warning = FALSE}
 library(cards)
