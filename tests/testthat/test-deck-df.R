@@ -45,21 +45,21 @@ test_that("print_hand_df returns a sorted character vector", {
   expect_identical(print_hand_df(hand, collapse = FALSE), c("2C", "5D", "QC", "QD", "KH"))
 })
 
-# eval_hand
-test_that("eval_hand returns correct hand rankings", {
-  expect_identical(eval_hand(standard_deck[48:52, ]), "royal_flush")
-  expect_identical(eval_hand(standard_deck[47:51, ]), "straight_flush")
-  expect_identical(eval_hand(standard_deck[c(40:43, 52), ]), "straight_flush") # ace low
-  expect_identical(eval_hand(standard_deck[c(13, 26, 39, 51, 52), ]), "four_ofakind")
-  expect_identical(eval_hand(standard_deck[c(13, 26, 38, 51, 52), ]), "full_house")
-  expect_identical(eval_hand(standard_deck[c(47, 49:52), ]), "flush")
-  expect_identical(eval_hand(standard_deck[c(35, 49:52), ]), "straight")
-  expect_identical(eval_hand(standard_deck[c(11, 26, 39, 51, 52), ]), "three_ofakind")
-  expect_identical(eval_hand(standard_deck[c(11, 25, 39, 51, 52), ]), "two_pair")
-  expect_identical(eval_hand(standard_deck[c(33:36, 49), ]), "jacks_better")
-  expect_identical(eval_hand(standard_deck[c(32:35, 48), ]), "one_pair")
-  expect_identical(eval_hand(standard_deck[c(34, 49:52), ]), "high_card")
+# eval_hand_df
+test_that("eval_hand_df returns correct hand rankings", {
+  expect_identical(eval_hand_df(standard_deck[48:52, ]), "royal_flush")
+  expect_identical(eval_hand_df(standard_deck[47:51, ]), "straight_flush")
+  expect_identical(eval_hand_df(standard_deck[c(40:43, 52), ]), "straight_flush") # ace low
+  expect_identical(eval_hand_df(standard_deck[c(13, 26, 39, 51, 52), ]), "four_ofakind")
+  expect_identical(eval_hand_df(standard_deck[c(13, 26, 38, 51, 52), ]), "full_house")
+  expect_identical(eval_hand_df(standard_deck[c(47, 49:52), ]), "flush")
+  expect_identical(eval_hand_df(standard_deck[c(35, 49:52), ]), "straight")
+  expect_identical(eval_hand_df(standard_deck[c(11, 26, 39, 51, 52), ]), "three_ofakind")
+  expect_identical(eval_hand_df(standard_deck[c(11, 25, 39, 51, 52), ]), "two_pair")
+  expect_identical(eval_hand_df(standard_deck[c(33:36, 49), ]), "jacks_better")
+  expect_identical(eval_hand_df(standard_deck[c(32:35, 48), ]), "one_pair")
+  expect_identical(eval_hand_df(standard_deck[c(34, 49:52), ]), "high_card")
 
   # regressions
-  expect_identical(eval_hand(standard_deck[c(3, 4, 14, 31, 42), ]), "one_pair")
+  expect_identical(eval_hand_df(standard_deck[c(3, 4, 14, 31, 42), ]), "one_pair")
 })

@@ -58,7 +58,7 @@ print_hand_df <- function(h, collapse = TRUE) {
   }
 }
 
-#' Evaluate a poker hand
+#' Evaluate a poker hand using `data.frame`
 #'
 #' Evaluate the rank category of a five card poker hand.
 #'
@@ -72,8 +72,8 @@ print_hand_df <- function(h, collapse = TRUE) {
 #' @examples
 #' deck <- new_deck_df()
 #' (hand <- deal_hand_df(deck))
-#' eval_hand(hand)
-eval_hand <- function(h) { # nolint: cyclocomp_linter.
+#' eval_hand_df(hand)
+eval_hand_df <- function(h) { # nolint: cyclocomp_linter.
   # sort hand with lowest rank first
   h <- h[order(h$rank), ]
   r <- rle(as.integer(h$rank))
