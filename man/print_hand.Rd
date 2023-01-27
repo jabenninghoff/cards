@@ -19,6 +19,6 @@ Returns a character vector of sorted cards, collapsed by default.
 }
 \examples{
 deck <- new_deck_df()
-(hand <- deal_hand(deck))
+(hand <- deal_hand_df(deck))
 print_hand(hand)
 }

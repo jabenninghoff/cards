@@ -20,6 +20,6 @@ Uses \code{\link[=order]{order()}} and \code{\link[=rle]{rle()}} to identify flu
 }
 \examples{
 deck <- new_deck_df()
-(hand <- deal_hand(deck))
+(hand <- deal_hand_df(deck))
 eval_hand(hand)
 }

@@ -30,9 +30,9 @@ test_that("new_deck_df returns 52 cards", {
   expect_identical(new_deck_df(), standard_deck)
 })
 
-# deal_hand
-test_that("deal_hand returns 5 cards from a standard deck", {
-  hand <- deal_hand(standard_deck)
+# deal_hand_df
+test_that("deal_hand_df returns 5 cards from a standard deck", {
+  hand <- deal_hand_df(standard_deck)
   expect_identical(nrow(hand), 5L)
   expect_identical(hand, standard_deck[rownames(hand), ])
 })
