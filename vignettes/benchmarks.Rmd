@@ -35,12 +35,12 @@ bench::mark(sample(1:52, 5))
 
 # Print
 
-Test performance of `print_hand()` with a single hand and with randomly selected hands:
+Test performance of `print_hand_df()` with a single hand and with randomly selected hands:
 
-```{r print_hand}
+```{r print_hand_df}
 test_hand <- deal_hand_df(deck)
-bench::mark(print_hand(test_hand))
-bench::mark(print_hand(deal_hand_df(deck)))
+bench::mark(print_hand_df(test_hand))
+bench::mark(print_hand_df(deal_hand_df(deck)))
 ```
 
 Performance of `deal_hand_df()` is slower than `eval_hand()`.

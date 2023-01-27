@@ -3,4 +3,4 @@
 export(deal_hand_df)
 export(eval_hand)
 export(new_deck_df)
-export(print_hand)
+export(print_hand_df)
