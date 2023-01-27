@@ -1,4 +1,4 @@
-#' Create a deck of cards
+#' Create a deck of cards using `data.frame`
 #'
 #' Return a standard deck of 52 playing cards, as a `data.frame` with `rank` and `suit`.
 #'
@@ -8,8 +8,8 @@
 #' @export
 #'
 #' @examples
-#' new_deck()
-new_deck <- function() {
+#' new_deck_df()
+new_deck_df <- function() {
   expand.grid(
     rank = c(2:10, "J", "Q", "K", "A"), suit = c("C", "D", "H", "S"),
     KEEP.OUT.ATTRS = FALSE, stringsAsFactors = TRUE
@@ -22,13 +22,13 @@ new_deck <- function() {
 #'
 #' Uses [sample()] to select 5 random cards.
 #'
-#' @param d a deck created by [new_deck()].
+#' @param d a deck created by [new_deck_df()].
 #'
 #' @return a `data.frame` containing 5 random cards.
 #' @export
 #'
 #' @examples
-#' deck <- new_deck()
+#' deck <- new_deck_df()
 #' deal_hand(deck)
 deal_hand <- function(d) {
   d[sample(nrow(d), 5), ]
@@ -45,7 +45,7 @@ deal_hand <- function(d) {
 #' @export
 #'
 #' @examples
-#' deck <- new_deck()
+#' deck <- new_deck_df()
 #' (hand <- deal_hand(deck))
 #' print_hand(hand)
 print_hand <- function(h, collapse = TRUE) {
@@ -70,7 +70,7 @@ print_hand <- function(h, collapse = TRUE) {
 #' @export
 #'
 #' @examples
-#' deck <- new_deck()
+#' deck <- new_deck_df()
 #' (hand <- deal_hand(deck))
 #' eval_hand(hand)
 eval_hand <- function(h) { # nolint: cyclocomp_linter.

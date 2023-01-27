@@ -19,7 +19,7 @@ Measure the performance of different implementations of `cards` using `bench::ma
 ```{r setup, message = FALSE, warning = FALSE}
 library(cards)
 
-deck <- new_deck()
+deck <- new_deck_df()
 ```
 
 # Deal
