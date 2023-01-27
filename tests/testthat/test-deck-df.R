@@ -9,7 +9,7 @@ standard_deck <- structure(
         1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L
       ),
       levels = c(
-        "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"
+        "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"
       ), class = "factor"
     ),
     suit = structure(

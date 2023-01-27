@@ -11,7 +11,7 @@
 #' new_deck_df()
 new_deck_df <- function() {
   expand.grid(
-    rank = c(2:10, "J", "Q", "K", "A"), suit = c("C", "D", "H", "S"),
+    rank = c(2:9, "T", "J", "Q", "K", "A"), suit = c("C", "D", "H", "S"),
     KEEP.OUT.ATTRS = FALSE, stringsAsFactors = TRUE
   )
 }
