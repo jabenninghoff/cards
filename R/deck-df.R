@@ -34,7 +34,7 @@ deal_hand_df <- function(d) {
   d[sample(nrow(d), 5), ]
 }
 
-#' Print a hand of cards
+#' Print a hand of cards using `data.frame`
 #'
 #' Returns a character vector of sorted cards, collapsed by default.
 #'
@@ -47,8 +47,8 @@ deal_hand_df <- function(d) {
 #' @examples
 #' deck <- new_deck_df()
 #' (hand <- deal_hand_df(deck))
-#' print_hand(hand)
-print_hand <- function(h, collapse = TRUE) {
+#' print_hand_df(hand)
+print_hand_df <- function(h, collapse = TRUE) {
   h <- h[order(h$rank), ]
   p <- vapply(1:5, function(x) paste0(h[[x, "rank"]], h[[x, "suit"]]), character(1))
   if (collapse) {
