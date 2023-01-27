@@ -25,9 +25,9 @@ standard_deck <- structure(
   class = "data.frame", row.names = c(NA, -52L)
 )
 
-# new_deck
-test_that("new_deck returns 52 cards", {
-  expect_identical(new_deck(), standard_deck)
+# new_deck_df
+test_that("new_deck_df returns 52 cards", {
+  expect_identical(new_deck_df(), standard_deck)
 })
 
 # deal_hand
