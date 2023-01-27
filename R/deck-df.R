@@ -16,7 +16,7 @@ new_deck_df <- function() {
   )
 }
 
-#' Deal a hand of cards
+#' Deal a hand of cards using `data.frame`
 #'
 #' Return a five card hand from a deck of cards, as a `data.frame` with `rank` and `suit`.
 #'
@@ -29,8 +29,8 @@ new_deck_df <- function() {
 #'
 #' @examples
 #' deck <- new_deck_df()
-#' deal_hand(deck)
-deal_hand <- function(d) {
+#' deal_hand_df(deck)
+deal_hand_df <- function(d) {
   d[sample(nrow(d), 5), ]
 }
 
@@ -46,7 +46,7 @@ deal_hand <- function(d) {
 #'
 #' @examples
 #' deck <- new_deck_df()
-#' (hand <- deal_hand(deck))
+#' (hand <- deal_hand_df(deck))
 #' print_hand(hand)
 print_hand <- function(h, collapse = TRUE) {
   h <- h[order(h$rank), ]
@@ -71,7 +71,7 @@ print_hand <- function(h, collapse = TRUE) {
 #'
 #' @examples
 #' deck <- new_deck_df()
-#' (hand <- deal_hand(deck))
+#' (hand <- deal_hand_df(deck))
 #' eval_hand(hand)
 eval_hand <- function(h) { # nolint: cyclocomp_linter.
   # sort hand with lowest rank first
