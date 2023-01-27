@@ -58,6 +58,6 @@ library(cards)
 deck <- new_deck_df()
 replicate(50, {
   hand <- deal_hand_df(deck)
-  paste0(print_hand_df(hand), ": ", eval_hand(hand))
+  paste0(print_hand_df(hand), ": ", eval_hand_df(hand))
 })
 ```

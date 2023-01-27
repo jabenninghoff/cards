@@ -43,16 +43,16 @@ bench::mark(print_hand_df(test_hand))
 bench::mark(print_hand_df(deal_hand_df(deck)))
 ```
 
-Performance of `deal_hand_df()` is slower than `eval_hand()`.
+Performance of `deal_hand_df()` is slower than `eval_hand_df()`.
 
 # Evaluate
 
-Test performance of `eval_hand()` with a single hand and with randomly selected hands:
+Test performance of `eval_hand_df()` with a single hand and with randomly selected hands:
 
-```{r eval_hand}
+```{r eval_hand_df}
 test_hand <- deal_hand_df(deck)
-bench::mark(eval_hand(test_hand))
-bench::mark(eval_hand(deal_hand_df(deck)))
+bench::mark(eval_hand_df(test_hand))
+bench::mark(eval_hand_df(deal_hand_df(deck)))
 ```
 
-As expected for a naive poker hand evaluator, performance of `eval_hand()` is poor compared to fast algorithms.
+As expected for a naive poker hand evaluator, performance of `eval_hand_df()` is poor compared to fast algorithms.
