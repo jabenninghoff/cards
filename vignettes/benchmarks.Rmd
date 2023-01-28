@@ -18,41 +18,77 @@ Measure the performance of different implementations of `cards` using `bench::ma
 
 ```{r setup, message = FALSE, warning = FALSE}
 library(cards)
-
-deck <- new_deck_df()
 ```
 
-# Deal
+# Data Frame
 
-Test performance of  compared to selecting 5 numbers from 1:52:
+Benchmark the initial implementation using `data.frame` compared to an `integer()` approach similar to [PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator) [`card.py`](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/python/phevaluator/card.py).
+
+## New Deck
+
+Create a new deck using `new_deck_df()` and an integer vector.
+
+```{r new_deck_df}
+deck <- new_deck_df()
+deck_int <- 0:51
+bench::mark(new_deck_df())
+bench::mark(0:51)
+```
+
+While `new_deck_df()` is not designed to be called frequently, using an integer vector is much faster.
+
+## Deal
+
+Compare performance of `deal_hand_df()` to sampling integers:
 
 ```{r deal_hand_df}
 bench::mark(deal_hand_df(deck))
-bench::mark(sample(1:52, 5))
+bench::mark(sample(deck_int, 5))
 ```
 
-`deal_hand_df()` is 7x slower than raw `sample()`.
+`deal_hand_df()` is about 7 times slower than `sample()`.
 
-# Print
+## Print
 
-Test performance of `print_hand_df()` with a single hand and with randomly selected hands:
+Test performance of `print_hand_df()` against a simple function that prints cards based on integers.
 
 ```{r print_hand_df}
 test_hand <- deal_hand_df(deck)
 bench::mark(print_hand_df(test_hand))
-bench::mark(print_hand_df(deal_hand_df(deck)))
+
+print_hand_int <- function(h) {
+  cards <- paste0(rep(c(2:9, "T", "J", "Q", "K", "A"), each = 4), c("C", "D", "H", "S"))
+  paste0(cards[h + 1], collapse = " ")
+}
+test_hand_int <- sample(0:51, 5)
+bench::mark(print_hand_int(test_hand_int))
 ```
 
-Performance of `deal_hand_df()` is slower than `eval_hand_df()`.
+`print_hand_df()` is 14-15 times slower than the integer approach.
 
-# Evaluate
+## Evaluate
 
 Test performance of `eval_hand_df()` with a single hand and with randomly selected hands:
 
 ```{r eval_hand_df}
-test_hand <- deal_hand_df(deck)
 bench::mark(eval_hand_df(test_hand))
 bench::mark(eval_hand_df(deal_hand_df(deck)))
 ```
 
 As expected for a naive poker hand evaluator, performance of `eval_hand_df()` is poor compared to fast algorithms.
+
+## Summary
+
+An implementation using integer would likely be much faster than the first implementation using `data.frame`. Rank and suit can be derived using integer division and modulo arithmetic respectively, and `tabulate()` is a faster replacement for `rle()`.
+
+```{r rle_tabulate}
+0:51 %/% 4
+tabulate(0:51 %/% 4 + 1, 13)
+0:51 %% 4
+tabulate(0:51 %% 4 + 1, 4)
+
+bench::mark(rle(sort(sample(0:51, 5) %/% 4 + 1)))
+bench::mark(tabulate(sample(0:51, 5) %/% 4 + 1, 13))
+```
+
+Note that the tabulate approach is 7 times faster than sorting and run length encoding.
