@@ -71,3 +71,63 @@ print_hand <- function(hand, collapse = TRUE) {
     return(h)
   }
 }
+
+#' Evaluate a poker hand
+#'
+#' Evaluate the rank category of a five card poker hand.
+#'
+#' @param hand a hand of cards.
+#'
+#' @return string hand rank
+#'
+#' @examples
+#' hand <- deal_hand(new_deck())
+#' print_hand(hand)
+#' eval_hand(hand)
+#' @export
+eval_hand <- function(hand) { # nolint: cyclocomp_linter.
+  rank <- hand %/% 4
+  rank_tab <- tabulate(rank + 1, 13)
+
+  m <- max(rank_tab)
+  if (m == 4) {
+    return("four_ofakind")
+  }
+  if (m == 3) {
+    if (sum(rank_tab == 2) == 1) {
+      return("full_house")
+    } else {
+      return("three_ofakind")
+    }
+  }
+  if (m == 2) {
+    if (sum(rank_tab == 2) == 2) {
+      return("two_pair")
+    } else if (any(rank_tab[10:13] == 2)) {
+      return("jacks_better")
+    } else {
+      return("one_pair")
+    }
+  }
+
+  is_flush <- all(hand[1] %% 4 == hand %% 4)
+  is_straight <- (max(rank_tab) == 1 && (max(rank) - min(rank) == 4)) ||
+    # ace low
+    all(rank_tab == c(1L, 1L, 1L, 1L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 1L))
+
+  if (is_flush && is_straight) {
+    if (min(rank) == 8) {
+      return("royal_flush")
+    } else {
+      return("straight_flush")
+    }
+  }
+  if (is_flush) {
+    return("flush")
+  }
+  if (is_straight) {
+    return("straight")
+  }
+
+  return("high_card")
+}
