@@ -6,7 +6,9 @@
 
 * Use "T" for ten instead of "10"
 
-* Updated Benchmarks vignette
+* Add second implementation using `integer()`: `new_deck()`, `deal_hand()`, `print_hand()`, `eval_hand()`
+
+* Updated Benchmarks vignette and added comparisons between implementations
 
 # cards 0.1.3
 
