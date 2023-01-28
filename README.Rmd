@@ -55,9 +55,9 @@ The cards package supports random draws and evaluation of poker rank [category](
 ```{r example}
 library(cards)
 
-deck <- new_deck_df()
+deck <- new_deck()
 replicate(50, {
-  hand <- deal_hand_df(deck)
-  paste0(print_hand_df(hand), ": ", eval_hand_df(hand))
+  hand <- deal_hand(deck)
+  paste0(print_hand(hand), ": ", eval_hand(hand))
 })
 ```
