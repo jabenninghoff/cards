@@ -13,6 +13,12 @@
     <loc>https://jabenninghoff.github.io/cards/TODO.html</loc>
   </url>
   <url>
+    <loc>https://jabenninghoff.github.io/cards/articles/benchmarks.html</loc>
+  </url>
+  <url>
+    <loc>https://jabenninghoff.github.io/cards/articles/index.html</loc>
+  </url>
+  <url>
     <loc>https://jabenninghoff.github.io/cards/authors.html</loc>
   </url>
   <url>
@@ -28,7 +34,13 @@
     <loc>https://jabenninghoff.github.io/cards/reference/deal_hand.html</loc>
   </url>
   <url>
+    <loc>https://jabenninghoff.github.io/cards/reference/deal_hand_df.html</loc>
+  </url>
+  <url>
     <loc>https://jabenninghoff.github.io/cards/reference/eval_hand.html</loc>
+  </url>
+  <url>
+    <loc>https://jabenninghoff.github.io/cards/reference/eval_hand_df.html</loc>
   </url>
   <url>
     <loc>https://jabenninghoff.github.io/cards/reference/index.html</loc>
@@ -37,6 +49,12 @@
     <loc>https://jabenninghoff.github.io/cards/reference/new_deck.html</loc>
   </url>
   <url>
+    <loc>https://jabenninghoff.github.io/cards/reference/new_deck_df.html</loc>
+  </url>
+  <url>
     <loc>https://jabenninghoff.github.io/cards/reference/print_hand.html</loc>
+  </url>
+  <url>
+    <loc>https://jabenninghoff.github.io/cards/reference/print_hand_df.html</loc>
   </url>
 </urlset>
