@@ -34,3 +34,19 @@
 new_deck <- function() {
   0:51
 }
+
+#' Deal a hand of cards
+#'
+#' Return a five card hand from a deck of cards, as an `integer`
+#'
+#' Uses [sample()] to select random cards.
+#'
+#' @param deck a deck created by [new_deck()].
+#' @param size hand size, default = 5.
+#'
+#' @examples
+#' deal_hand(new_deck())
+#' @export
+deal_hand <- function(deck, size = 5) {
+  sample(deck, size)
+}
