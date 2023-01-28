@@ -1,3 +1,13 @@
+# cards 0.2.0
+
+* Moved benchmark tests to new "Benchmarks" vignette
+
+* Renamed functions from first implementation to `new_deck_df()`, `deal_hand_df()`, `print_hand_df()`, `eval_hand_df()`
+
+* Use "T" for ten instead of "10"
+
+* Updated Benchmarks vignette
+
 # cards 0.1.3
 
 * Maintenance update
