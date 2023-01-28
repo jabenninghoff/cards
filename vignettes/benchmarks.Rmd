@@ -92,3 +92,79 @@ bench::mark(tabulate(sample(0:51, 5) %/% 4 + 1, 13))
 ```
 
 Note that the tabulate approach is 7 times faster than sorting and run length encoding.
+
+# Integer
+
+Benchmark the second implementation using `integer()`.
+
+## New Deck
+
+Create a new deck using `new_deck()` and `new_deck_df()`.
+
+```{r new_deck}
+deck_df <- new_deck_df()
+deck <- new_deck()
+bench::mark(new_deck_df())
+bench::mark(new_deck())
+```
+
+`new_deck()` is 90 times faster.
+
+## Deal
+
+Compare performance of `deal_hand_df()` and `deal_hand()`
+
+```{r deal_hand}
+bench::mark(deal_hand_df(deck_df))
+bench::mark(deal_hand(deck))
+```
+
+`deal_hand()` is about 6 times faster.
+
+## Print
+
+Test performance of `print_hand_df()` against `print_hand()`.
+
+```{r print_hand}
+test_hand_df <- deal_hand_df(deck_df)
+test_hand <- deal_hand(deck)
+
+bench::mark(print_hand_df(test_hand_df))
+bench::mark(print_hand(test_hand))
+```
+
+`print_hand()` is 16 times faster.
+
+## Evaluate
+
+Test performance of `eval_hand_df()` and `eval_hand()` with a single hand.
+
+```{r eval_hand}
+bench::mark(eval_hand_df(test_hand_df))
+bench::mark(eval_hand(test_hand))
+```
+
+`eval_hand()` is 20 times faster, but should perform poorly compared to fast algorithms.
+
+## Summary
+
+Compare performance evaluating and printing multiple hands.
+
+```{r readme}
+bench::mark({
+  deck <- new_deck_df()
+  replicate(50, {
+    hand <- deal_hand_df(deck)
+    paste0(print_hand_df(hand), ": ", eval_hand_df(hand))
+  })
+})
+bench::mark({
+  deck <- new_deck()
+  replicate(50, {
+    hand <- deal_hand(deck)
+    paste0(print_hand(hand), ": ", eval_hand(hand))
+  })
+})
+```
+
+Overall, the new implementation is 13-14 times faster.
