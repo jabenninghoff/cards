@@ -50,3 +50,24 @@ new_deck <- function() {
 deal_hand <- function(deck, size = 5) {
   sample(deck, size)
 }
+
+#' Print a hand of cards
+#'
+#' Returns a character vector of cards, collapsed by default.
+#'
+#' @param hand a hand of cards.
+#' @param collapse if `TRUE`, collapse the character vector.
+#'
+#' @examples
+#' (hand <- deal_hand(new_deck()))
+#' print_hand(hand)
+#' @export
+print_hand <- function(hand, collapse = TRUE) {
+  cards <- paste0(rep(c(2:9, "T", "J", "Q", "K", "A"), each = 4), c("C", "D", "H", "S"))
+  h <- cards[hand + 1]
+  if (collapse) {
+    return(paste0(h, collapse = " "))
+  } else {
+    return(h)
+  }
+}
