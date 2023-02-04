@@ -1,0 +1,65 @@
+---
+title: "Video Poker"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Video Poker}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Simulate "Full Pay Jacks or Better" [optimal strategy](https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/optimal/) video poker.
+
+```{r setup, message = FALSE, warning = FALSE}
+library(cards)
+library(tibble)
+library(dplyr)
+
+deck <- new_deck()
+```
+
+Hand             Payoff
+--------------- -------
+Royal Flush     800
+Straight Flush  50
+Four of a Kind  25
+Full House      9
+Flush           6
+Straight        4
+Three of a Kind 3
+Two Pair        2
+Jacks or Better 1
+
+# One Hand
+
+Run simple simulations with a single hand, without drawing new cards.
+
+```{r hands}
+hands <- replicate(1e6, eval_hand(deal_hand(deck)))
+```
+
+Calculate payouts:
+
+```{r payout}
+payout <- hands |>
+  as_tibble_col(column_name = "hand") |>
+  mutate(payout = case_match(
+    hand,
+    c("high_card", "one_pair") ~ 0,
+    "jacks_better" ~ 1,
+    "two_pair" ~ 2,
+    "three_ofakind" ~ 3,
+    "straight" ~ 4,
+    "flush" ~ 6,
+    "full_house" ~ 9,
+    "four_ofakind" ~ 25,
+    "straight_flush" ~ 50,
+    "royal_flush" ~ 800
+  ))
+```
