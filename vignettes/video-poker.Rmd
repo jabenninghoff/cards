@@ -14,7 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-Simulate "Full Pay Jacks or Better" [optimal strategy](https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/optimal/) video poker.
+Simulate "Full Pay Jacks or Better" [optimal strategy](https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/optimal/) video poker. As the linked article notes:
+
+> The following strategy is for full pay Jacks or Better video poker. "Full Pay" designates the following paytable, per coin based on five coins bet, which returns 99.54% of money bet assuming optimal strategy.
 
 ```{r setup, message = FALSE, warning = FALSE}
 library(cards)
@@ -22,9 +24,20 @@ library(tibble)
 library(dplyr)
 
 deck <- new_deck()
+runs <- 2e6
 ```
 
-Hand             Payoff
+# One Hand
+
+Run simple simulations with a single hand, without drawing new cards.
+
+```{r hands}
+hands <- replicate(runs, eval_hand(deal_hand(deck)))
+```
+
+Calculate payouts, using the table from the [optimal strategy article](https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/optimal/) and these [pay tables](https://www.gamblingsites.org/casino/video-poker/pay-tables/):
+
+Hand             Payout
 --------------- -------
 Royal Flush     800
 Straight Flush  50
@@ -36,15 +49,7 @@ Three of a Kind 3
 Two Pair        2
 Jacks or Better 1
 
-# One Hand
-
-Run simple simulations with a single hand, without drawing new cards.
-
-```{r hands}
-hands <- replicate(1e6, eval_hand(deal_hand(deck)))
-```
-
-Calculate payouts:
+Payout is per coin when betting 5 coins.
 
 ```{r payout}
 payout <- hands |>
@@ -63,3 +68,23 @@ payout <- hands |>
     "royal_flush" ~ 800
   ))
 ```
+
+Filter only Royal Flushes:
+
+```{r royal_flush}
+payout |>
+  filter(payout == 800)
+```
+
+Calculate the total payout, and percentage return:
+
+```{r}
+total <- payout |>
+  pull(payout) |>
+  sum()
+
+total
+total / runs
+```
+
+A simple "one hand" simulation performs much poorer than the expected return of 99.54% for optimal strategy.
