@@ -1,3 +1,7 @@
+# cards 0.2.1
+
+* Added "Video Poker" vignette
+
 # cards 0.2.0
 
 * Moved benchmark tests to new "Benchmarks" vignette
