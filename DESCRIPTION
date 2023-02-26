@@ -21,6 +21,7 @@ Suggests:
     pkgdown,
     pkgload,
     rdev (>= 1.5.8),
+    reticulate,
     rmarkdown,
     spelling,
     testthat (>= 3.0.0),
