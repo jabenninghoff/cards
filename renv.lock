@@ -8,6 +8,11 @@
       }
     ]
   },
+  "Python": {
+    "Version": "3.11.2",
+    "Type": "virtualenv",
+    "Name": "./renv/python/virtualenvs/renv-python-3.11"
+  },
   "Packages": {
     "DT": {
       "Package": "DT",
@@ -23,6 +28,16 @@
         "jsonlite",
         "magrittr",
         "promises"
+      ]
+    },
+    "Matrix": {
+      "Package": "Matrix",
+      "Version": "1.5-3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4006dffe49958d2dd591c17e61e60591",
+      "Requirements": [
+        "lattice"
       ]
     },
     "R.cache": {
@@ -82,6 +97,16 @@
       "Repository": "CRAN",
       "Hash": "e749cae40fa9ef469b6050959517453c",
       "Requirements": []
+    },
+    "RcppTOML": {
+      "Package": "RcppTOML",
+      "Version": "0.2.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "c232938949fcd8126034419cc529333a",
+      "Requirements": [
+        "Rcpp"
+      ]
     },
     "askpass": {
       "Package": "askpass",
@@ -498,6 +523,16 @@
       "Hash": "4f2596dfb05dac67b9dc558e5c6fba2e",
       "Requirements": []
     },
+    "here": {
+      "Package": "here",
+      "Version": "1.0.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "24b224366f9c2e7534d2344d10d59211",
+      "Requirements": [
+        "rprojroot"
+      ]
+    },
     "highr": {
       "Package": "highr",
       "Version": "0.10",
@@ -641,6 +676,14 @@
         "Rcpp",
         "rlang"
       ]
+    },
+    "lattice": {
+      "Package": "lattice",
+      "Version": "0.20-45",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "b64cdbb2b340437c4ee047a1f4c4377b",
+      "Requirements": []
     },
     "lazyeval": {
       "Package": "lazyeval",
@@ -839,6 +882,14 @@
         "withr"
       ]
     },
+    "png": {
+      "Package": "png",
+      "Version": "0.1-8",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "bd54ba8a0a5faded999a7aab6e46b374",
+      "Requirements": []
+    },
     "praise": {
       "Package": "praise",
       "Version": "1.0.0",
@@ -1027,6 +1078,23 @@
       "Repository": "CRAN",
       "Hash": "c9e8442ab69bc21c9697ecf856c1e6c7",
       "Requirements": []
+    },
+    "reticulate": {
+      "Package": "reticulate",
+      "Version": "1.28",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "86c441bf33e1d608db773cb94b848458",
+      "Requirements": [
+        "Matrix",
+        "Rcpp",
+        "RcppTOML",
+        "here",
+        "jsonlite",
+        "png",
+        "rappdirs",
+        "withr"
+      ]
     },
     "rex": {
       "Package": "rex",

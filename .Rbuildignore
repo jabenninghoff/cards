@@ -1,6 +1,7 @@
 ^_pkgdown\.yml$
 ^\.github$
 ^\.lintr$
+^\.python-version$
 ^\.Rproj\.user$
 ^cards\.Rproj$
 ^codecov\.yml$
@@ -10,4 +11,5 @@
 ^README\.Rmd$
 ^renv\.lock$
 ^renv$
+^requirements\.txt$
 ^TODO\.md$

@@ -18,6 +18,9 @@ Measure the performance of different implementations of `cards` using `bench::ma
 
 ```{r setup, message = FALSE, warning = FALSE}
 library(cards)
+library(reticulate)
+
+phevaluator <- import("phevaluator")
 ```
 
 # Data Frame
@@ -168,3 +171,47 @@ bench::mark({
 ```
 
 Overall, the new implementation is 13-14 times faster.
+
+# Python
+
+Benchmark the `integer()` approach to [PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator) using [reticulate](https://rstudio.github.io/reticulate/index.html).
+
+## Import
+
+Test performance of `phevaluator` using `reticulate::import()`, starting with `sample_cards()`:
+
+```{r sample_cards}
+bench::mark(deal_hand(deck))
+bench::mark(phevaluator$sample_cards(5L))
+```
+
+`phevaluator$sample_cards()` is 13 times slower than than the R integer implementation.
+
+Also test `phevaluator$evaluate_card()` against the R integer method. `evaluate_card()` expects five to seven integers passed as individual parameters.
+
+```{r evaluate_card}
+bench::mark(eval_hand(test_hand))
+bench::mark(do.call(phevaluator$evaluate_cards, as.list(test_hand)))
+```
+
+Surprisingly, `phevaluator` is almost as slow as the original data frame implementation. Test again using some specific hands and avoid the overhead of `do.call()` and `as.list()`:
+
+```{r royal_flush}
+four_aces <- c(51L, 50L, 49L, 48L, 47L)
+royal_flush <- c(50L, 46L, 42L, 38L, 34L)
+
+bench::mark(eval_hand(four_aces))
+bench::mark(phevaluator$evaluate_cards(51L, 50L, 49L, 48L, 47L))
+
+bench::mark(eval_hand(royal_flush))
+bench::mark(phevaluator$evaluate_cards(50L, 46L, 42L, 38L, 34L))
+```
+
+Calling `evaluate_cards()` directly doesn't significantly change the results. Test once more with random hands:
+
+```{r random_hands}
+bench::mark(eval_hand(deal_hand(deck)))
+bench::mark(do.call(phevaluator$evaluate_cards, as.list(deal_hand(deck))))
+```
+
+Conclusion: using `phevaluator` via `reticulate::import()` is not a faster way to evaluate hands. It is important to note that `phevaluator$evaluate_cards()` does more than `eval_hand()`, as `phevaluator` ranks all poker hands and `eval_hand()` only determines the hand rank category.
