@@ -1,3 +1,7 @@
+# cards 0.2.2
+
+* Added benchmarks of `phevaluator` using `reticulate::import()` to Benchmarks vignette
+
 # cards 0.2.1
 
 * Added "Video Poker" vignette
