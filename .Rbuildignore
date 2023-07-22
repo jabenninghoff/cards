@@ -1,7 +1,6 @@
 ^_pkgdown\.yml$
 ^\.github$
 ^\.lintr$
-^\.python-version$
 ^\.Rproj\.user$
 ^cards\.Rproj$
 ^codecov\.yml$
