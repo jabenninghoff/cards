@@ -1,3 +1,7 @@
+# cards 0.2.3
+
+* Maintenance update
+
 # cards 0.2.2
 
 * Added benchmarks of `phevaluator` using `reticulate::import()` to Benchmarks vignette
