@@ -99,7 +99,7 @@ eval_hand_df <- function(h) { # nolint: cyclocomp_linter.
   } else if (length(r$lengths[r$lengths == 2]) == 2) {
     return("two_pair")
   } else if (length(r$lengths[r$lengths == 2]) == 1 &&
-    as.integer(h$rank[duplicated(h$rank)]) >= 10) {
+    as.integer(h$rank[duplicated(h$rank)]) >= 10) { # nolint: indentation_linter. r-lib/lintr#2007
     return("jacks_better")
   } else if (length(r$lengths[r$lengths == 2]) == 1) {
     return("one_pair")
