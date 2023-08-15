@@ -21,4 +21,8 @@ if (interactive()) {
       "pre-commit", readLines(fs::path_package("rdev", "templates", "pre-commit"))
     )
   }
+  # python configuration reminders
+  writeLines("To reinstall or upgrade python: renv::use_python()")
+  writeLines('To reinstall or upgrade required packages: reticulate::py_install("phevaluator")')
+  writeLines("")
 }
