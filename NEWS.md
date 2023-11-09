@@ -1,3 +1,7 @@
+# cards 0.2.5
+
+* Updated installation instructions
+
 # cards 0.2.4
 
 * Maintenance update
