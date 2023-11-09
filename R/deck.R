@@ -2,9 +2,8 @@
 #'
 #' Return a deck of 52 playing cards represented as integers from 0 to 51.
 #'
-# nolint start: line_length_linter.
+# nolint next: line_length_linter.
 #' Following the example of [PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/python/phevaluator/card.py),
-# nolint end
 #'   integers are used to represent a card `id`, with the two least significant bits representing
 #'   the 4 suits (0-3), and the rest representing the 13 ranks (0-12):
 #'
