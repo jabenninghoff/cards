@@ -1,3 +1,7 @@
+# cards 0.2.6
+
+* Site rendering fixes
+
 # cards 0.2.5
 
 * Updated installation instructions
