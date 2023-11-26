@@ -25,4 +25,6 @@ if (interactive()) {
   writeLines("To reinstall or upgrade python: renv::use_python()")
   writeLines('To reinstall or upgrade required packages: reticulate::py_install("phevaluator")')
   writeLines("")
+  # warn if pandoc not found in PATH
+  if (Sys.which("pandoc") == "") warning("pandoc not found, run `open /Applications/RStudio.app`")
 }
