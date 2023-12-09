@@ -11,3 +11,4 @@
 ^renv\.lock$
 ^renv$
 ^requirements\.txt$
+^TODO\.md$
