@@ -35,7 +35,7 @@ Run simple simulations with a single hand, without drawing new cards.
 hands <- replicate(runs, eval_hand(deal_hand(deck)))
 ```
 
-Calculate payouts, using the table from the [optimal strategy article](https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/optimal/) and these [pay tables](https://www.gamblingsites.org/casino/video-poker/pay-tables/):
+Calculate payouts, using the table from the [optimal strategy article](https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/optimal/) and these [pay tables](https://web.archive.org/web/20221125191618/https://www.gamblingsites.org/casino/video-poker/pay-tables/):
 
 Hand             Payout
 --------------- -------
