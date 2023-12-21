@@ -1209,14 +1209,14 @@
     },
     "rdev": {
       "Package": "rdev",
-      "Version": "1.9.2",
+      "Version": "1.9.3",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jabenninghoff",
       "RemoteRepo": "rdev",
       "RemoteRef": "main",
-      "RemoteSha": "2272b024e70514b1b0aba3b9e4a1cf957f8a5f43",
+      "RemoteSha": "453f7a04aa73b031cfe819203d6cc5e962c32370",
       "Requirements": [
         "checkmate",
         "cli",
@@ -1250,7 +1250,7 @@
         "xml2",
         "yaml"
       ],
-      "Hash": "75e60716873e1093ab9c80e449390184"
+      "Hash": "9d068362eca15d090e212b0aad6b3d5d"
     },
     "rematch2": {
       "Package": "rematch2",
