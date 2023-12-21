@@ -9,6 +9,8 @@ License: MIT + file LICENSE
 URL: https://jabenninghoff.github.io/cards/,
     https://github.com/jabenninghoff/cards
 BugReports: https://github.com/jabenninghoff/cards/issues
+Imports: 
+    Rcpp
 Suggests: 
     bench,
     covr,
@@ -28,6 +30,8 @@ Suggests:
     tibble,
     usethis,
     withr
+LinkingTo: 
+    Rcpp
 VignetteBuilder: 
     knitr
 Remotes: 
