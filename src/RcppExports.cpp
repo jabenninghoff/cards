@@ -10,6 +10,16 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// eval_hand_phe
+String eval_hand_phe();
+RcppExport SEXP _cards_eval_hand_phe() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(eval_hand_phe());
+    return rcpp_result_gen;
+END_RCPP
+}
 // leading_na
 LogicalVector leading_na(IntegerVector x);
 RcppExport SEXP _cards_leading_na(SEXP xSEXP) {
@@ -23,6 +33,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_cards_eval_hand_phe", (DL_FUNC) &_cards_eval_hand_phe, 0},
     {"_cards_leading_na", (DL_FUNC) &_cards_leading_na, 1},
     {NULL, NULL, 0}
 };
