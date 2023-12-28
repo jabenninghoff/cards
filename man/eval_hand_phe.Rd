@@ -4,15 +4,22 @@
 \alias{eval_hand_phe}
 \title{Evaluate a poker hand using PH Evaluator}
 \usage{
-eval_hand_phe()
+eval_hand_phe(hand)
+}
+\arguments{
+\item{hand}{a hand of cards (an integer vector of length 5).}
 }
 \value{
-string hand rank
+string hand rank.
 }
 \description{
 Evaluate the rank category of a five card poker hand using
 \href{https://github.com/HenryRLee/PokerHandEvaluator}{PH Evaluator}.
 }
 \details{
+Implemented following
+\href{https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/examples/cpp_example.cc}{\code{cpp_example.cc}}
+and \href{https://github.com/eddelbuettel/rcppannoy}{RcppAnnoy}.
+
 Currently implemented as a stub function that always returns "poker_hand".
 }

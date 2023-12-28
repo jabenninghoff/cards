@@ -11,12 +11,13 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // eval_hand_phe
-String eval_hand_phe();
-RcppExport SEXP _cards_eval_hand_phe() {
+String eval_hand_phe(IntegerVector hand);
+RcppExport SEXP _cards_eval_hand_phe(SEXP handSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(eval_hand_phe());
+    Rcpp::traits::input_parameter< IntegerVector >::type hand(handSEXP);
+    rcpp_result_gen = Rcpp::wrap(eval_hand_phe(hand));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -33,7 +34,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_cards_eval_hand_phe", (DL_FUNC) &_cards_eval_hand_phe, 0},
+    {"_cards_eval_hand_phe", (DL_FUNC) &_cards_eval_hand_phe, 1},
     {"_cards_leading_na", (DL_FUNC) &_cards_leading_na, 1},
     {NULL, NULL, 0}
 };

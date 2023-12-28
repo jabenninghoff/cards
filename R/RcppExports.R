@@ -6,12 +6,17 @@
 #' Evaluate the rank category of a five card poker hand using
 #'   [PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator).
 #'
+#' Implemented following
+#'   [`cpp_example.cc`](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/examples/cpp_example.cc)
+#'   and [RcppAnnoy](https://github.com/eddelbuettel/rcppannoy).
+#'
 #' Currently implemented as a stub function that always returns "poker_hand".
 #'
-#' @return string hand rank
+#' @param hand a hand of cards (an integer vector of length 5).
+#' @return string hand rank.
 #' @export
-eval_hand_phe <- function() {
-    .Call(`_cards_eval_hand_phe`)
+eval_hand_phe <- function(hand) {
+    .Call(`_cards_eval_hand_phe`, hand)
 }
 
 #' Leading NA
