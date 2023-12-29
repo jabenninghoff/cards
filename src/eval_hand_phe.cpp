@@ -15,6 +15,9 @@ using namespace Rcpp;
 //'   PH Evaluator
 //'   [`cpp_example.cc`](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/examples/cpp_example.cc),
 //'   and [RcppAnnoy](https://github.com/eddelbuettel/rcppannoy), with help from
+//'   R-Bloggers [Rcpp and Roxygen2](https://www.r-bloggers.com/2016/08/rcpp-and-roxygen2/),
+//'   [usethis::use_rcpp()], roxygen2 instructions on
+//'   [Rcpp](https://roxygen2.r-lib.org/articles/roxygen2.html#rcpp),
 //'   [Rcpp for everyone](https://teuder.github.io/rcpp4everyone_en/), the rxylib
 //'   [`Makefile`](https://github.com/R-Lum/rxylib/blob/master/src/Makevars) and
 //'   [Stack Overflow](https://stackoverflow.com/questions/43597632/understanding-the-contents-of-the-makevars-file-in-r-macros-variables-r-ma).
