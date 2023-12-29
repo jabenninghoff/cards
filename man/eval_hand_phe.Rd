@@ -18,8 +18,16 @@ Evaluate the rank category of a five card poker hand using
 }
 \details{
 Implemented following
-\href{https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/examples/cpp_example.cc}{\code{cpp_example.cc}}
-and \href{https://github.com/eddelbuettel/rcppannoy}{RcppAnnoy}.
+\href{https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-libraries.pdf}{Rcpp-libraries},
+PH Evaluator
+\href{https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/examples/cpp_example.cc}{\code{cpp_example.cc}},
+and \href{https://github.com/eddelbuettel/rcppannoy}{RcppAnnoy}, with help from
+\href{https://teuder.github.io/rcpp4everyone_en/}{Rcpp for everyone}, the rxylib
+\href{https://github.com/R-Lum/rxylib/blob/master/src/Makevars}{\code{Makefile}} and
+\href{https://stackoverflow.com/questions/43597632/understanding-the-contents-of-the-makevars-file-in-r-macros-variables-r-ma}{Stack Overflow}.
 
-Currently implemented as a stub function that always returns "poker_hand".
+\code{eval_hand_phe} returns one of the rank categories "Straight Flush", "Four of a Kind",
+"Full House", "Flush", "Straight", "Three of a Kind", "Two Pair", "One Pair", or "High Card".
+
+"Royal Flush" and "Jacks or Better" are not currently supported.
 }
