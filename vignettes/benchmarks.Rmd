@@ -155,7 +155,7 @@ bench::mark(eval_hand(test_hand))
 
 `eval_hand()` is 20 times faster, but should perform poorly compared to fast algorithms.
 
-## Summary
+## Multiple Hands
 
 Compare performance evaluating and printing multiple hands.
 
