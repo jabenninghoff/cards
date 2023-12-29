@@ -29,6 +29,10 @@ using namespace Rcpp;
 //'
 //' @param hand a hand of cards (an integer vector of length 5).
 //' @return string hand rank.
+//' @examples
+//' hand <- deal_hand(new_deck())
+//' print_hand(hand)
+//' eval_hand_phe(hand)
 //' @export
 // [[Rcpp::export]]
 String eval_hand_phe(IntegerVector hand) {

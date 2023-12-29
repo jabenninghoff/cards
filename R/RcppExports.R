@@ -25,6 +25,10 @@
 #'
 #' @param hand a hand of cards (an integer vector of length 5).
 #' @return string hand rank.
+#' @examples
+#' hand <- deal_hand(new_deck())
+#' print_hand(hand)
+#' eval_hand_phe(hand)
 #' @export
 eval_hand_phe <- function(hand) {
     .Call(`_cards_eval_hand_phe`, hand)

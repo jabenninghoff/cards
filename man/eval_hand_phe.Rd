@@ -34,3 +34,8 @@ R-Bloggers \href{https://www.r-bloggers.com/2016/08/rcpp-and-roxygen2/}{Rcpp and
 
 "Royal Flush" and "Jacks or Better" are not currently supported.
 }
+\examples{
+hand <- deal_hand(new_deck())
+print_hand(hand)
+eval_hand_phe(hand)
+}
