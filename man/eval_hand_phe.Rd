@@ -22,6 +22,9 @@ Implemented following
 PH Evaluator
 \href{https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/examples/cpp_example.cc}{\code{cpp_example.cc}},
 and \href{https://github.com/eddelbuettel/rcppannoy}{RcppAnnoy}, with help from
+R-Bloggers \href{https://www.r-bloggers.com/2016/08/rcpp-and-roxygen2/}{Rcpp and Roxygen2},
+\code{\link[usethis:use_rcpp]{usethis::use_rcpp()}}, roxygen2 instructions on
+\href{https://roxygen2.r-lib.org/articles/roxygen2.html#rcpp}{Rcpp},
 \href{https://teuder.github.io/rcpp4everyone_en/}{Rcpp for everyone}, the rxylib
 \href{https://github.com/R-Lum/rxylib/blob/master/src/Makevars}{\code{Makefile}} and
 \href{https://stackoverflow.com/questions/43597632/understanding-the-contents-of-the-makevars-file-in-r-macros-variables-r-ma}{Stack Overflow}.

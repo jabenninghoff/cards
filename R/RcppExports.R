@@ -11,6 +11,9 @@
 #'   PH Evaluator
 #'   [`cpp_example.cc`](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/examples/cpp_example.cc),
 #'   and [RcppAnnoy](https://github.com/eddelbuettel/rcppannoy), with help from
+#'   R-Bloggers [Rcpp and Roxygen2](https://www.r-bloggers.com/2016/08/rcpp-and-roxygen2/),
+#'   [usethis::use_rcpp()], roxygen2 instructions on
+#'   [Rcpp](https://roxygen2.r-lib.org/articles/roxygen2.html#rcpp),
 #'   [Rcpp for everyone](https://teuder.github.io/rcpp4everyone_en/), the rxylib
 #'   [`Makefile`](https://github.com/R-Lum/rxylib/blob/master/src/Makevars) and
 #'   [Stack Overflow](https://stackoverflow.com/questions/43597632/understanding-the-contents-of-the-makevars-file-in-r-macros-variables-r-ma).
@@ -25,29 +28,5 @@
 #' @export
 eval_hand_phe <- function(hand) {
     .Call(`_cards_eval_hand_phe`, hand)
-}
-
-#' Leading NA
-#'
-#' This function returns a logical vector identifying if
-#' there are leading NA, marking the leading NAs as TRUE and
-#' everything else as FALSE.
-#'
-#' Code from R-Bloggers [Rcpp and Roxygen2](https://www.r-bloggers.com/2016/08/rcpp-and-roxygen2/).
-#'
-#' Installed with help from [usethis::use_rcpp()] and roxygen2 instructions on
-#'   [Rcpp](https://roxygen2.r-lib.org/articles/roxygen2.html#rcpp).
-#'
-#' Steps to install:
-#'
-#' 1. Create `src/leading_na.cpp` (this file)
-#' 1. Run [usethis::use_rcpp()], add `@importFrom Rcpp sourceCpp` and
-#'    `@useDynLib cards, .registration = TRUE` to `package.R` as directed
-#' 1. Run [desc::desc_normalize()] and [devtools::document()]
-#'
-#' @param x An integer vector
-#' @export
-leading_na <- function(x) {
-    .Call(`_cards_leading_na`, x)
 }
 

@@ -21,21 +21,9 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// leading_na
-LogicalVector leading_na(IntegerVector x);
-RcppExport SEXP _cards_leading_na(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< IntegerVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(leading_na(x));
-    return rcpp_result_gen;
-END_RCPP
-}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_cards_eval_hand_phe", (DL_FUNC) &_cards_eval_hand_phe, 1},
-    {"_cards_leading_na", (DL_FUNC) &_cards_leading_na, 1},
     {NULL, NULL, 0}
 };
 
