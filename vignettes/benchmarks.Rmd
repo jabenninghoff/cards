@@ -228,3 +228,35 @@ bench::mark(do.call(phevaluator$evaluate_cards, as.list(deal_hand(deck))))
 Conclusion: using `phevaluator` via `reticulate::import()` is not a faster way to evaluate hands. It
 is important to note that `phevaluator$evaluate_cards()` does more than `eval_hand()`, as
 `phevaluator` ranks all poker hands and `eval_hand()` only determines the hand rank category.
+
+# C/C++
+
+Benchmark the `integer()` approach against the C/C++ implementation of
+[PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator) using [Rcpp](https://www.rcpp.org).
+
+The current version only implements `eval_hand_phe()`, which uses `EvaluateCards()` and
+`describeCategory()` to return the card rank category.
+
+## Evaluate
+
+Test performance of `eval_hand()` and `eval_hand_phe()` with a single hand:
+
+```{r eval_hand_phe}
+bench::mark(eval_hand(test_hand))
+bench::mark(eval_hand_phe(test_hand))
+```
+
+Somewhat surprisingly, `eval_hand_phe()` is only 2 times faster than `eval_hand()`, however,
+`eval_hand_phe()` doesn't just evaluate hand rank category, it also determines exact hand rank.
+
+Reviewing the benchmarks on the PH Evaluator `README` and on my own system, the compiled C/C++
+implementation should be capable of about 70 million hands per second, while `eval_hand_phe()`
+achieves about 1 million per second. This is likely due to the additional overhead of using R, and,
+more importantly, the additional call to `describeCategory()`, as the benchmark
+[code](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/benchmark/benchmark.cc) only
+calls `EvaluateCards()`.
+
+A future implementation could implement the full `pheval` libraries and the C++ code in
+[`card_sampler.h`](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/benchmark/card_sampler.h)
+to generate random hands in a standalone R package using
+[Rcpp Modules](https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-modules.pdf).
