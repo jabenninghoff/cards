@@ -50,7 +50,8 @@ renv::install("jabenninghoff/cards")
 
 ## Usage
 
-The cards package supports random draws and evaluation of poker rank [category](https://en.wikipedia.org/wiki/List_of_poker_hands):
+The cards package supports random draws and evaluation of poker rank
+[category](https://en.wikipedia.org/wiki/List_of_poker_hands):
 
 ```{r example}
 library(cards)

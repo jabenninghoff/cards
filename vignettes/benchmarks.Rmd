@@ -25,7 +25,9 @@ phevaluator <- import("phevaluator")
 
 # Data Frame
 
-Benchmark the initial implementation using `data.frame` compared to an `integer()` approach similar to [PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator) [`card.py`](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/python/phevaluator/card.py).
+Benchmark the initial implementation using `data.frame` compared to an `integer()` approach similar
+to [PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator)
+[`card.py`](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/python/phevaluator/card.py).
 
 ## New Deck
 
@@ -38,7 +40,8 @@ bench::mark(new_deck_df())
 bench::mark(0:51)
 ```
 
-While `new_deck_df()` is not designed to be called frequently, using an integer vector is much faster.
+While `new_deck_df()` is not designed to be called frequently, using an integer vector is much
+faster.
 
 ## Deal
 
@@ -78,11 +81,14 @@ bench::mark(eval_hand_df(test_hand))
 bench::mark(eval_hand_df(deal_hand_df(deck)))
 ```
 
-As expected for a naive poker hand evaluator, performance of `eval_hand_df()` is poor compared to fast algorithms.
+As expected for a naive poker hand evaluator, performance of `eval_hand_df()` is poor compared to
+fast algorithms.
 
 ## Summary
 
-An implementation using integer would likely be much faster than the first implementation using `data.frame`. Rank and suit can be derived using integer division and modulo arithmetic respectively, and `tabulate()` is a faster replacement for `rle()`.
+An implementation using integer would likely be much faster than the first implementation using
+`data.frame`. Rank and suit can be derived using integer division and modulo arithmetic
+respectively,and `tabulate()` is a faster replacement for `rle()`.
 
 ```{r rle_tabulate}
 0:51 %/% 4
@@ -174,7 +180,9 @@ Overall, the new implementation is 13-14 times faster.
 
 # Python
 
-Benchmark the `integer()` approach to [PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator) using [reticulate](https://rstudio.github.io/reticulate/index.html).
+Benchmark the `integer()` approach to
+[PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator) using
+[reticulate](https://rstudio.github.io/reticulate/index.html).
 
 ## Import
 
@@ -187,14 +195,16 @@ bench::mark(phevaluator$sample_cards(5L))
 
 `phevaluator$sample_cards()` is 13 times slower than than the R integer implementation.
 
-Also test `phevaluator$evaluate_card()` against the R integer method. `evaluate_card()` expects five to seven integers passed as individual parameters.
+Also test `phevaluator$evaluate_card()` against the R integer method. `evaluate_card()` expects five
+to seven integers passed as individual parameters.
 
 ```{r evaluate_card}
 bench::mark(eval_hand(test_hand))
 bench::mark(do.call(phevaluator$evaluate_cards, as.list(test_hand)))
 ```
 
-Surprisingly, `phevaluator` is almost as slow as the original data frame implementation. Test again using some specific hands and avoid the overhead of `do.call()` and `as.list()`:
+Surprisingly, `phevaluator` is almost as slow as the original data frame implementation. Test again
+using some specific hands and avoid the overhead of `do.call()` and `as.list()`:
 
 ```{r royal_flush}
 four_aces <- c(51L, 50L, 49L, 48L, 47L)
@@ -207,11 +217,14 @@ bench::mark(eval_hand(royal_flush))
 bench::mark(phevaluator$evaluate_cards(50L, 46L, 42L, 38L, 34L))
 ```
 
-Calling `evaluate_cards()` directly doesn't significantly change the results. Test once more with random hands:
+Calling `evaluate_cards()` directly doesn't significantly change the results. Test once more with
+random hands:
 
 ```{r random_hands}
 bench::mark(eval_hand(deal_hand(deck)))
 bench::mark(do.call(phevaluator$evaluate_cards, as.list(deal_hand(deck))))
 ```
 
-Conclusion: using `phevaluator` via `reticulate::import()` is not a faster way to evaluate hands. It is important to note that `phevaluator$evaluate_cards()` does more than `eval_hand()`, as `phevaluator` ranks all poker hands and `eval_hand()` only determines the hand rank category.
+Conclusion: using `phevaluator` via `reticulate::import()` is not a faster way to evaluate hands. It
+is important to note that `phevaluator$evaluate_cards()` does more than `eval_hand()`, as
+`phevaluator` ranks all poker hands and `eval_hand()` only determines the hand rank category.
