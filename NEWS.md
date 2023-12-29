@@ -2,6 +2,8 @@
 
 * Added `eval_hand_phe()`: Evaluate the rank category of a five card poker hand using [PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator)'s five card C/C++ implementation using [Rcpp](https://www.rcpp.org).
 
+* Added benchmarks of PH Evaluator C/C++ implementation using `eval_hand_phe()`
+
 # cards 0.2.7
 
 * Maintenance update
