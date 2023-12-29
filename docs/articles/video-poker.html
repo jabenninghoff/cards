@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">cards</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,7 +105,7 @@ cards.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hands</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">replicate</a></span><span class="op">(</span><span class="va">runs</span>, <span class="fu"><a href="../reference/eval_hand.html">eval_hand</a></span><span class="op">(</span><span class="fu"><a href="../reference/deal_hand.html">deal_hand</a></span><span class="op">(</span><span class="va">deck</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Calculate payouts, using the table from the <a href="https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/optimal/" class="external-link">optimal
-strategy article</a> and these <a href="https://www.gamblingsites.org/casino/video-poker/pay-tables/" class="external-link">pay
+strategy article</a> and these <a href="https://web.archive.org/web/20221125191618/https://www.gamblingsites.org/casino/video-poker/pay-tables/" class="external-link">pay
 tables</a>:</p>
 <table class="table">
 <thead><tr class="header">
@@ -172,11 +172,13 @@ tables</a>:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">payout</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">payout</span> <span class="op">==</span> <span class="fl">800</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 2</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 2</span></span></span>
 <span><span class="co">#&gt;   hand        payout</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> royal_flush    800</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> royal_flush    800</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> royal_flush    800</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> royal_flush    800</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> royal_flush    800</span></span></code></pre></div>
 <p>Calculate the total payout, and percentage return:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">total</span> <span class="op">&lt;-</span> <span class="va">payout</span> <span class="op">|&gt;</span></span>
@@ -184,9 +186,9 @@ tables</a>:</p>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">total</span></span>
-<span><span class="co">#&gt; [1] 672155</span></span>
+<span><span class="co">#&gt; [1] 675242</span></span>
 <span><span class="va">total</span> <span class="op">/</span> <span class="va">runs</span></span>
-<span><span class="co">#&gt; [1] 0.3360775</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.337621</span></span></code></pre></div>
 <p>A simple “one hand” simulation performs much poorer than the expected
 return of 99.54% for optimal strategy.</p>
 </div>
