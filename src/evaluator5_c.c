@@ -14,11 +14,6 @@
  *  limitations under the License.
  */
 
-/*
- * Renamed from evaulator_5.c to evaluator_5_c.c since Rcpp compiles both
- * evaluator5.c and evaluator5.cc as evaluator5.o
- */
-
 #include <stdio.h>
 #include "hash.h"
 #include "tables.h"
