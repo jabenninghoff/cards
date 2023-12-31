@@ -18,7 +18,7 @@ Evaluate the rank category of a five card poker hand using
 }
 \details{
 Implemented following
-\href{https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-libraries.pdf}{Rcpp-libraries},
+\href{https://CRAN.R-project.org/package=Rcpp/vignettes/Rcpp-libraries.pdf}{Rcpp-libraries},
 PH Evaluator
 \href{https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/examples/cpp_example.cc}{\code{cpp_example.cc}},
 and \href{https://github.com/eddelbuettel/rcppannoy}{RcppAnnoy}, with help from

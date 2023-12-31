@@ -259,4 +259,4 @@ calls `EvaluateCards()`.
 A future implementation could implement the full `pheval` libraries and the C++ code in
 [`card_sampler.h`](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/benchmark/card_sampler.h)
 to generate random hands in a standalone R package using
-[Rcpp Modules](https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-modules.pdf).
+[Rcpp Modules](https://CRAN.R-project.org/package=Rcpp/vignettes/Rcpp-modules.pdf).
