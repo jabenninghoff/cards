@@ -7,7 +7,7 @@
 #'   [PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator).
 #'
 #' Implemented following
-#'   [Rcpp-libraries](https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-libraries.pdf),
+#'   [Rcpp-libraries](https://CRAN.R-project.org/package=Rcpp/vignettes/Rcpp-libraries.pdf),
 #'   PH Evaluator
 #'   [`cpp_example.cc`](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/examples/cpp_example.cc),
 #'   and [RcppAnnoy](https://github.com/eddelbuettel/rcppannoy), with help from
