@@ -1,2 +1,2 @@
-numpy==1.26.2
+numpy==1.26.3
 phevaluator==0.5.2
