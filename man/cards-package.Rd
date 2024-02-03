@@ -6,6 +6,8 @@
 \alias{cards-package}
 \title{cards: Card Simulation Tools}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 Tools for card game simulations, written in base R.
 }
 \seealso{

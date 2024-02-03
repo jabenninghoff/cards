@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# cards
+# cards <img src="man/figures/logo.png" align="right" alt="logo" width="120" />
 
 <!-- badges: start -->
 
@@ -53,29 +53,29 @@ replicate(50, {
   hand <- deal_hand(deck)
   paste0(print_hand(hand), ": ", eval_hand(hand))
 })
-#>  [1] "5C 7D TD 9S 8S: high_card"    "KH 4H JS 9H QD: high_card"   
-#>  [3] "5S JC JD 6H TC: jacks_better" "QC KH 8H 3S KD: jacks_better"
-#>  [5] "3S 9H 2H 4C 6C: high_card"    "7H 6C JC 6H 2D: one_pair"    
-#>  [7] "3S 7H 4S 9D 9S: one_pair"     "9C TD KC 6H 6D: one_pair"    
-#>  [9] "6C 7S 3D 4D 8D: high_card"    "7D 2C 3D 9C 2D: one_pair"    
-#> [11] "2S TH 9S 4S 8H: high_card"    "3S KC TS 2D 4D: high_card"   
-#> [13] "6H 5H AS KD JS: high_card"    "AH 3S KC 9S 3C: one_pair"    
-#> [15] "5D 4D 3D QH JS: high_card"    "3C AD KC 2C 8H: high_card"   
-#> [17] "TS 7H 2H TH 4S: one_pair"     "5H 2H QC 8C AD: high_card"   
-#> [19] "7S QH 9C JD KS: high_card"    "AH 2C 4H 7S 7H: one_pair"    
-#> [21] "4D 4C KS JD 9C: one_pair"     "TH 8C KD JC 5D: high_card"   
-#> [23] "3H 8C 8H KC 9D: one_pair"     "3S 7H 9H AS QH: high_card"   
-#> [25] "JH AC 3D QC 9D: high_card"    "2D 6S JC 5D KH: high_card"   
-#> [27] "7H TC 8C 2D 2H: one_pair"     "6H KH 9S JH 8C: high_card"   
-#> [29] "TD 9C 9D 3S 3D: two_pair"     "2H QD JD TS 7S: high_card"   
-#> [31] "5D 2C AH QD 5S: one_pair"     "TH 3D 8S TD 7S: one_pair"    
-#> [33] "2S 8H KH 3D AS: high_card"    "5D 2S KD 7C 3S: high_card"   
-#> [35] "JD QH 7H QC 4S: jacks_better" "7C 8H 4H 5H 3D: high_card"   
-#> [37] "TD 2C 2H TC 8C: two_pair"     "9D TH AH 7D JH: high_card"   
-#> [39] "3D 6C 5H 8C JS: high_card"    "9C TS 3C QH AD: high_card"   
-#> [41] "4D TS 6S 9H QH: high_card"    "JC AH TD 9C TH: one_pair"    
-#> [43] "4C JS 4D KC KD: two_pair"     "7C JH TS 2D TD: one_pair"    
-#> [45] "4H JS 7D KH JH: jacks_better" "KC QC 6H 2D QS: jacks_better"
-#> [47] "7H JH 2S QS 5H: high_card"    "TS 7H 8S 3D TC: one_pair"    
-#> [49] "QS 2H JS AC 9C: high_card"    "4D TS QH 9H AH: high_card"
+#>  [1] "AC JH 9S QD KS: high_card"    "TH QS 4H 2S 9H: high_card"   
+#>  [3] "AC 2D QS 9C KC: high_card"    "JD 4D 5D 6H JH: jacks_better"
+#>  [5] "9S AH 4D QC 6S: high_card"    "TS JC 2H QD 6C: high_card"   
+#>  [7] "JC JH TS 7S TC: two_pair"     "AS 2D JC 6D AD: jacks_better"
+#>  [9] "QD 2D 6S JH 7H: high_card"    "6H TH 8S AD 5C: high_card"   
+#> [11] "AD JD 8C 4C 6S: high_card"    "KH JS 5D 3C QD: high_card"   
+#> [13] "7C JH 2H QD KS: high_card"    "AH JC 4S 5S 4C: one_pair"    
+#> [15] "TS 5S 9S JS 8C: high_card"    "6S 2S 7C QC TC: high_card"   
+#> [17] "3C 2C QS 8D KS: high_card"    "6H 2S QD 3D KH: high_card"   
+#> [19] "9D 6C AD 4C KH: high_card"    "7H TS 3S 9C 7S: one_pair"    
+#> [21] "QH 7C 5H 7D QS: two_pair"     "3S 7C JC TC 4D: high_card"   
+#> [23] "TH QS 8C 8H 2H: one_pair"     "QS 3C 8S 4H 5C: high_card"   
+#> [25] "AD 3H 7H TS KC: high_card"    "4D 2H QD QH 6C: jacks_better"
+#> [27] "TD KC JH 9D 4S: high_card"    "TH 4H JD 3D 7H: high_card"   
+#> [29] "JD JC TC 3D AC: jacks_better" "5D AH 6H JS KS: high_card"   
+#> [31] "8H 6S 6D 4S 5D: one_pair"     "6C 9S 3S 2S TH: high_card"   
+#> [33] "7C AD 2H QD TS: high_card"    "QC KD KS JS 7C: jacks_better"
+#> [35] "4D 6S 9C 9H KS: one_pair"     "7S TS KH TH 8C: one_pair"    
+#> [37] "6D 3H KC 8S 6S: one_pair"     "3C 5H 3S 9D 4S: one_pair"    
+#> [39] "JC 3D 3H 9H QD: one_pair"     "8S JS QS AS 5S: flush"       
+#> [41] "6D 2S KD 5H 6H: one_pair"     "9D 2S 9C JC AH: one_pair"    
+#> [43] "7H 8H JH 7S 8C: two_pair"     "TD JC 2H 2D 7H: one_pair"    
+#> [45] "9S AH 2D JD 9H: one_pair"     "TS 3S KD 2C 9C: high_card"   
+#> [47] "6H 7D KS QC KH: jacks_better" "QS AH 8C 8S QH: two_pair"    
+#> [49] "JD 7D 7S JC JH: full_house"   "TS 5D 4D AH 2H: high_card"
 ```
