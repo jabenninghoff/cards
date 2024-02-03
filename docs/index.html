@@ -7,6 +7,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Tools for card game simulations, written in base R.">
 <title>Card Simulation Tools • cards</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -14,6 +20,7 @@
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="Card Simulation Tools">
 <meta property="og:description" content="Tools for card game simulations, written in base R.">
+<meta property="og:image" content="https://jabenninghoff.github.io/cards/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -27,7 +34,7 @@
     
     <a class="navbar-brand me-2" href="index.html">cards</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,8 +76,10 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="cards">cards<a class="anchor" aria-label="anchor" href="#cards"></a>
-</h1></div>
+<div class="page-header">
+<img src="logo.png" class="logo" alt=""><h1 id="cards-">cards <a class="anchor" aria-label="anchor" href="#cards-"></a>
+</h1>
+</div>
 <!-- badges: start -->
 
 <div class="section level2">
@@ -112,31 +121,31 @@
 <span>  <span class="va">hand</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/deal_hand.html">deal_hand</a></span><span class="op">(</span><span class="va">deck</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="fu"><a href="reference/print_hand.html">print_hand</a></span><span class="op">(</span><span class="va">hand</span><span class="op">)</span>, <span class="st">": "</span>, <span class="fu"><a href="reference/eval_hand.html">eval_hand</a></span><span class="op">(</span><span class="va">hand</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  [1] "5C 7D TD 9S 8S: high_card"    "KH 4H JS 9H QD: high_card"   </span></span>
-<span><span class="co">#&gt;  [3] "5S JC JD 6H TC: jacks_better" "QC KH 8H 3S KD: jacks_better"</span></span>
-<span><span class="co">#&gt;  [5] "3S 9H 2H 4C 6C: high_card"    "7H 6C JC 6H 2D: one_pair"    </span></span>
-<span><span class="co">#&gt;  [7] "3S 7H 4S 9D 9S: one_pair"     "9C TD KC 6H 6D: one_pair"    </span></span>
-<span><span class="co">#&gt;  [9] "6C 7S 3D 4D 8D: high_card"    "7D 2C 3D 9C 2D: one_pair"    </span></span>
-<span><span class="co">#&gt; [11] "2S TH 9S 4S 8H: high_card"    "3S KC TS 2D 4D: high_card"   </span></span>
-<span><span class="co">#&gt; [13] "6H 5H AS KD JS: high_card"    "AH 3S KC 9S 3C: one_pair"    </span></span>
-<span><span class="co">#&gt; [15] "5D 4D 3D QH JS: high_card"    "3C AD KC 2C 8H: high_card"   </span></span>
-<span><span class="co">#&gt; [17] "TS 7H 2H TH 4S: one_pair"     "5H 2H QC 8C AD: high_card"   </span></span>
-<span><span class="co">#&gt; [19] "7S QH 9C JD KS: high_card"    "AH 2C 4H 7S 7H: one_pair"    </span></span>
-<span><span class="co">#&gt; [21] "4D 4C KS JD 9C: one_pair"     "TH 8C KD JC 5D: high_card"   </span></span>
-<span><span class="co">#&gt; [23] "3H 8C 8H KC 9D: one_pair"     "3S 7H 9H AS QH: high_card"   </span></span>
-<span><span class="co">#&gt; [25] "JH AC 3D QC 9D: high_card"    "2D 6S JC 5D KH: high_card"   </span></span>
-<span><span class="co">#&gt; [27] "7H TC 8C 2D 2H: one_pair"     "6H KH 9S JH 8C: high_card"   </span></span>
-<span><span class="co">#&gt; [29] "TD 9C 9D 3S 3D: two_pair"     "2H QD JD TS 7S: high_card"   </span></span>
-<span><span class="co">#&gt; [31] "5D 2C AH QD 5S: one_pair"     "TH 3D 8S TD 7S: one_pair"    </span></span>
-<span><span class="co">#&gt; [33] "2S 8H KH 3D AS: high_card"    "5D 2S KD 7C 3S: high_card"   </span></span>
-<span><span class="co">#&gt; [35] "JD QH 7H QC 4S: jacks_better" "7C 8H 4H 5H 3D: high_card"   </span></span>
-<span><span class="co">#&gt; [37] "TD 2C 2H TC 8C: two_pair"     "9D TH AH 7D JH: high_card"   </span></span>
-<span><span class="co">#&gt; [39] "3D 6C 5H 8C JS: high_card"    "9C TS 3C QH AD: high_card"   </span></span>
-<span><span class="co">#&gt; [41] "4D TS 6S 9H QH: high_card"    "JC AH TD 9C TH: one_pair"    </span></span>
-<span><span class="co">#&gt; [43] "4C JS 4D KC KD: two_pair"     "7C JH TS 2D TD: one_pair"    </span></span>
-<span><span class="co">#&gt; [45] "4H JS 7D KH JH: jacks_better" "KC QC 6H 2D QS: jacks_better"</span></span>
-<span><span class="co">#&gt; [47] "7H JH 2S QS 5H: high_card"    "TS 7H 8S 3D TC: one_pair"    </span></span>
-<span><span class="co">#&gt; [49] "QS 2H JS AC 9C: high_card"    "4D TS QH 9H AH: high_card"</span></span></code></pre></div>
+<span><span class="co">#&gt;  [1] "TC 5C KD 7C QH: high_card"     "AD JS 9C 3H 6D: high_card"    </span></span>
+<span><span class="co">#&gt;  [3] "6C 7H KD 5S 3D: high_card"     "JC 5S 9C 6D 9S: one_pair"     </span></span>
+<span><span class="co">#&gt;  [5] "JD 9D 8H 8C QD: one_pair"      "KC 8H 2D 9C TS: high_card"    </span></span>
+<span><span class="co">#&gt;  [7] "7C AS JD 6S 3S: high_card"     "JC 4C QH 9C KH: high_card"    </span></span>
+<span><span class="co">#&gt;  [9] "AH 5S 3S 7S 4H: high_card"     "9H KS JH JS 8C: jacks_better" </span></span>
+<span><span class="co">#&gt; [11] "AS 6H QD JS QS: jacks_better"  "8S 8H QC 2H 9D: one_pair"     </span></span>
+<span><span class="co">#&gt; [13] "3H 4C AH 5S JS: high_card"     "TH JH 7D KS 5C: high_card"    </span></span>
+<span><span class="co">#&gt; [15] "TC 3H JH AS 2S: high_card"     "4S 8C 4C 9D KH: one_pair"     </span></span>
+<span><span class="co">#&gt; [17] "5C 9H JS 4D 4S: one_pair"      "9S JS 5H AS AH: jacks_better" </span></span>
+<span><span class="co">#&gt; [19] "AC KD KS 7S 6C: jacks_better"  "4C 3S 4S 3C 7S: two_pair"     </span></span>
+<span><span class="co">#&gt; [21] "JS 7D AH 5S 3D: high_card"     "JH QC 4H 2H 3C: high_card"    </span></span>
+<span><span class="co">#&gt; [23] "QS 2D 7C 6S TS: high_card"     "9D 7S AS QH 8D: high_card"    </span></span>
+<span><span class="co">#&gt; [25] "9H QS JD 3C AD: high_card"     "JH 7S TS 7D KC: one_pair"     </span></span>
+<span><span class="co">#&gt; [27] "8H 6S JH QD 8D: one_pair"      "QC AC 7S 7H 5S: one_pair"     </span></span>
+<span><span class="co">#&gt; [29] "TH 2S AD TS QC: one_pair"      "AS QD TH TC 3S: one_pair"     </span></span>
+<span><span class="co">#&gt; [31] "9D 7C JH 6H 4C: high_card"     "QD TS 9D 9S AS: one_pair"     </span></span>
+<span><span class="co">#&gt; [33] "3H 4C 7S TH TD: one_pair"      "6S 3H TC QH 5H: high_card"    </span></span>
+<span><span class="co">#&gt; [35] "AH TS QC JS TC: one_pair"      "6C 4C AS TC 7D: high_card"    </span></span>
+<span><span class="co">#&gt; [37] "3S 4C 3H 5D 6H: one_pair"      "3H JC AD 3D AC: two_pair"     </span></span>
+<span><span class="co">#&gt; [39] "5D TD 6H JH 5H: one_pair"      "6C QH 2C KH 2S: one_pair"     </span></span>
+<span><span class="co">#&gt; [41] "KH JD KD QH TH: jacks_better"  "3S 6S TH KD KC: jacks_better" </span></span>
+<span><span class="co">#&gt; [43] "9C QD 9D 2C KS: one_pair"      "8D 9D 7H 5D 4C: high_card"    </span></span>
+<span><span class="co">#&gt; [45] "4C 7C QD 2C 8D: high_card"     "6C KC QD TC TS: one_pair"     </span></span>
+<span><span class="co">#&gt; [47] "QH 6C 6H JH 6S: three_ofakind" "8D TS TC 8C 2D: two_pair"     </span></span>
+<span><span class="co">#&gt; [49] "4H 7S 8D 4C 5H: one_pair"      "AS KS 5C TS 7S: high_card"</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
