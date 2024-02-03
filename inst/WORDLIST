@@ -6,6 +6,7 @@ Rcpp
 RcppAnnoy
 Roxygen
 paytable
+pkgdown
 renv
 reticulate
 roxygen

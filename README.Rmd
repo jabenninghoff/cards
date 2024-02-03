@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# cards
+# cards <img src="man/figures/logo.png" align="right" alt="logo" width="120" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/jabenninghoff/cards/workflows/R-CMD-check/badge.svg)](https://github.com/jabenninghoff/cards/actions)
