@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.3.2",
+    "Version": "4.3.3",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -9,14 +9,14 @@
     ]
   },
   "Python": {
-    "Version": "3.11.7",
+    "Version": "3.12.2",
     "Type": "virtualenv",
-    "Name": "./renv/python/virtualenvs/renv-python-3.11"
+    "Name": "./renv/python/virtualenvs/renv-python-3.12"
   },
   "Packages": {
     "DT": {
       "Package": "DT",
-      "Version": "0.31",
+      "Version": "0.32",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -29,7 +29,7 @@
         "magrittr",
         "promises"
       ],
-      "Hash": "77b5189f5272ae2b21e3ac2175ad107c"
+      "Hash": "0d3ab8abbb0c3e3daa47d4dc8e17bbae"
     },
     "Matrix": {
       "Package": "Matrix",
@@ -233,7 +233,7 @@
     },
     "callr": {
       "Package": "callr",
-      "Version": "3.7.3",
+      "Version": "3.7.5",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -242,7 +242,7 @@
         "processx",
         "utils"
       ],
-      "Hash": "9b2191ede20fa29828139b9900922e51"
+      "Hash": "9f0e4fae4963ba775a5e5c520838c87b"
     },
     "checkmate": {
       "Package": "checkmate",
@@ -365,13 +365,13 @@
     },
     "curl": {
       "Package": "curl",
-      "Version": "5.2.0",
+      "Version": "5.2.1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R"
       ],
-      "Hash": "ce88d13c0b10fe88a37d9c59dba2d7f9"
+      "Hash": "411ca2c03b1ce5f548345d2fc2685f7a"
     },
     "cyclocomp": {
       "Package": "cyclocomp",
@@ -869,19 +869,6 @@
       ],
       "Hash": "7ce2733a9826b3aeb1775d56fd305472"
     },
-    "markdown": {
-      "Package": "markdown",
-      "Version": "1.12",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "commonmark",
-        "utils",
-        "xfun"
-      ],
-      "Hash": "765cf53992401b3b6c297b69e1edb8bd"
-    },
     "memoise": {
       "Package": "memoise",
       "Version": "2.0.1",
@@ -934,18 +921,6 @@
         "askpass"
       ],
       "Hash": "2a0dc8c6adfb6f032e4d4af82d258ab5"
-    },
-    "packrat": {
-      "Package": "packrat",
-      "Version": "0.9.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "tools",
-        "utils"
-      ],
-      "Hash": "55ddd2d4a1959535f18393478b0c14a6"
     },
     "pillar": {
       "Package": "pillar",
@@ -1149,20 +1124,23 @@
     },
     "quarto": {
       "Package": "quarto",
-      "Version": "1.3",
+      "Version": "1.4",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
+        "R",
+        "cli",
         "jsonlite",
         "later",
         "processx",
+        "rlang",
         "rmarkdown",
-        "rsconnect",
         "rstudioapi",
+        "tools",
         "utils",
         "yaml"
       ],
-      "Hash": "79e1cff980960b566ddc4ddb1a49a13d"
+      "Hash": "c94c271f9b998d116186a78b2a9b23c1"
     },
     "ragg": {
       "Package": "ragg",
@@ -1209,14 +1187,14 @@
     },
     "rdev": {
       "Package": "rdev",
-      "Version": "1.9.7",
+      "Version": "1.10.2",
       "Source": "GitHub",
       "RemoteType": "github",
-      "RemoteHost": "api.github.com",
       "RemoteUsername": "jabenninghoff",
       "RemoteRepo": "rdev",
       "RemoteRef": "main",
-      "RemoteSha": "cbb8cc0df2eb807b6f037f0b871d195c2f89259f",
+      "RemoteSha": "7f04a7ea193215277a96a865e3217e3839b421f3",
+      "RemoteHost": "api.github.com",
       "Requirements": [
         "checkmate",
         "cli",
@@ -1227,7 +1205,6 @@
         "gert",
         "gh",
         "lintr",
-        "markdown",
         "miniUI",
         "mockery",
         "pkgdown",
@@ -1250,7 +1227,7 @@
         "xml2",
         "yaml"
       ],
-      "Hash": "9ac34b34d99a21fb60676e5a67092e0b"
+      "Hash": "93e8680c76319886e40740bf3de49eb0"
     },
     "rematch2": {
       "Package": "rematch2",
@@ -1278,13 +1255,13 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "1.0.3",
+      "Version": "1.0.5",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "utils"
       ],
-      "Hash": "41b847654f567341725473431dd0d5ab"
+      "Hash": "32c3f93e8360f667ca5863272ec8ba6a"
     },
     "reticulate": {
       "Package": "reticulate",
@@ -1331,7 +1308,7 @@
     },
     "rmarkdown": {
       "Package": "rmarkdown",
-      "Version": "2.25",
+      "Version": "2.26",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1344,14 +1321,13 @@
         "jsonlite",
         "knitr",
         "methods",
-        "stringr",
         "tinytex",
         "tools",
         "utils",
         "xfun",
         "yaml"
       ],
-      "Hash": "d65e35823c817f09f4de424fcdfa812a"
+      "Hash": "9b148e7f95d33aac01f31282d49e4f44"
     },
     "roxygen2": {
       "Package": "roxygen2",
@@ -1388,28 +1364,6 @@
         "R"
       ],
       "Hash": "4c8415e0ec1e29f3f4f6fc108bef0144"
-    },
-    "rsconnect": {
-      "Package": "rsconnect",
-      "Version": "1.2.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "cli",
-        "curl",
-        "digest",
-        "jsonlite",
-        "lifecycle",
-        "openssl",
-        "packrat",
-        "renv",
-        "rlang",
-        "rstudioapi",
-        "tools",
-        "yaml"
-      ],
-      "Hash": "94bb3a2125b01b13dd2e4a784c2a9639"
     },
     "rstudioapi": {
       "Package": "rstudioapi",
@@ -1503,7 +1457,7 @@
     },
     "spelling": {
       "Package": "spelling",
-      "Version": "2.2.1",
+      "Version": "2.3.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1512,7 +1466,7 @@
         "knitr",
         "xml2"
       ],
-      "Hash": "8ed9f010f7caeb8586523088b7f23dcd"
+      "Hash": "632e9e83d3dc774d361b9415b15642bb"
     },
     "stringi": {
       "Package": "stringi",
@@ -1572,14 +1526,14 @@
     },
     "systemfonts": {
       "Package": "systemfonts",
-      "Version": "1.0.5",
+      "Version": "1.0.6",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "cpp11"
       ],
-      "Hash": "15b594369e70b975ba9f064295983499"
+      "Hash": "6d538cff441f0f1f36db2209ac7495ac"
     },
     "testthat": {
       "Package": "testthat",
@@ -1683,7 +1637,7 @@
     },
     "usethis": {
       "Package": "usethis",
-      "Version": "2.2.2",
+      "Version": "2.2.3",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1710,7 +1664,7 @@
         "withr",
         "yaml"
       ],
-      "Hash": "60e51f0b94d0324dc19e44110098fa9f"
+      "Hash": "d524fd42c517035027f866064417d7e6"
     },
     "utf8": {
       "Package": "utf8",
@@ -1775,14 +1729,15 @@
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.41",
+      "Version": "0.42",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
+        "grDevices",
         "stats",
         "tools"
       ],
-      "Hash": "460a5e0fe46a80ef87424ad216028014"
+      "Hash": "fd1349170df31f7a10bd98b0189e85af"
     },
     "xml2": {
       "Package": "xml2",
