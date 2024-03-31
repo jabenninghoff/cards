@@ -1,3 +1,7 @@
+# cards 0.3.6
+
+* Maintenance update
+
 # cards 0.3.5
 
 * Maintenance update
