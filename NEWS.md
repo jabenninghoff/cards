@@ -1,3 +1,7 @@
+# cards 0.3.7
+
+* Updated for R 4.4.0
+
 # cards 0.3.6
 
 * Maintenance update
