@@ -1,66 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/404.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/TODO.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/articles/benchmarks.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/articles/video-poker.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/index.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/cards-package.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/deal_hand.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/deal_hand_df.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/eval_hand.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/eval_hand_df.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/eval_hand_phe.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/new_deck.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/new_deck_df.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/print_hand.html</loc>
-  </url>
-  <url>
-    <loc>https://jabenninghoff.github.io/cards/reference/print_hand_df.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://jabenninghoff.github.io/cards/404.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/LICENSE-text.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/LICENSE.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/TODO.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/articles/benchmarks.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/articles/index.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/articles/video-poker.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/authors.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/index.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/news/index.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/cards-package.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/deal_hand.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/deal_hand_df.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/eval_hand.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/eval_hand_df.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/eval_hand_phe.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/index.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/new_deck.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/new_deck_df.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/print_hand.html</loc></url>
+<url><loc>https://jabenninghoff.github.io/cards/reference/print_hand_df.html</loc></url>
 </urlset>
+
