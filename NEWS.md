@@ -1,3 +1,7 @@
+# cards 0.3.8
+
+* Enabled pkgdown [light switch](https://pkgdown.r-lib.org/articles/customise.html#light-switch)
+
 # cards 0.3.7
 
 * Updated for R 4.4.0
