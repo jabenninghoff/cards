@@ -1,6 +1,6 @@
 # cards 0.3.9
 
-* Security maintenance update
+* Added `tools/distclean.sh`: script to clean Python and Rcpp environments
 
 # cards 0.3.8
 
