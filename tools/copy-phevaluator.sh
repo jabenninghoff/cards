@@ -5,14 +5,14 @@ PHEDIR="../PokerHandEvaluator/cpp"
 PHEINC="include/phevaluator"
 PHESRC="src"
 
-function makedir {
+makedir() {
 	local dir="${1}"
 
 	echo "mkdir -p ${dir}"
 	mkdir -p "${dir}"
 }
 
-function copy {
+copy() {
 	local src="${1}"
 	local dst="${2}"
 
@@ -20,7 +20,7 @@ function copy {
 	cp "${src}" "${dst}"
 }
 
-if [ "`head -1 DESCRIPTION`" != "Package: cards" ]
+if [ "$(head -1 DESCRIPTION)" != "Package: cards" ]
 then
 	echo "./tools/copy-phevaluator.sh must be run from the cards project root!"
 	exit 1
