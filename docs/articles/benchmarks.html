@@ -27,7 +27,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">cards</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.8</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.9</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,12 +105,12 @@ vector.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression         min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> new_deck_df()   20.3µs   21.5µs    <span style="text-decoration: underline;">44</span>364.    1.25KB     53.3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> new_deck_df()   20.5µs   21.5µs    <span style="text-decoration: underline;">44</span>850.    1.25KB     53.9</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">51</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression      min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 0:51              0     41ns 37<span style="text-decoration: underline;">483</span>001.        0B        0</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 0:51              0     41ns 26<span style="text-decoration: underline;">275</span>285.        0B        0</span></span></code></pre></div>
 <p>While <code><a href="../reference/new_deck_df.html">new_deck_df()</a></code> is not designed to be called
 frequently, using an integer vector is much faster.</p>
 </div>
@@ -124,12 +124,12 @@ integers:</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression              min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> deal_hand_df(deck)   18.2µs   19.9µs    <span style="text-decoration: underline;">47</span>989.    3.73KB     19.2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> deal_hand_df(deck)   18.2µs     20µs    <span style="text-decoration: underline;">47</span>860.    3.73KB     19.2</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">deck_int</span>, <span class="fl">5</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression               min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> sample(deck_int, 5)   2.05µs   2.38µs   <span style="text-decoration: underline;">403</span>668.      264B        0</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> sample(deck_int, 5)   2.05µs   2.42µs   <span style="text-decoration: underline;">388</span>419.      264B        0</span></span></code></pre></div>
 <p><code><a href="../reference/deal_hand_df.html">deal_hand_df()</a></code> is about 7 times slower than
 <code><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample()</a></code>.</p>
 </div>
@@ -144,7 +144,7 @@ function that prints cards based on integers.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                    min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> print_hand_df(test_hand)     80µs   85.7µs    <span style="text-decoration: underline;">11</span>446.    10.5KB     16.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> print_hand_df(test_hand)   80.2µs   85.4µs    <span style="text-decoration: underline;">11</span>582.    10.5KB     16.5</span></span>
 <span></span>
 <span><span class="va">print_hand_int</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">h</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">cards</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">9</span>, <span class="st">"T"</span>, <span class="st">"J"</span>, <span class="st">"Q"</span>, <span class="st">"K"</span>, <span class="st">"A"</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">4</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"H"</span>, <span class="st">"S"</span><span class="op">)</span><span class="op">)</span></span>
@@ -155,7 +155,7 @@ function that prints cards based on integers.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                         min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> print_hand_int(test_hand_int)   5.62µs   5.86µs   <span style="text-decoration: underline;">160</span>569.      928B        0</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> print_hand_int(test_hand_int)   5.66µs   6.03µs   <span style="text-decoration: underline;">154</span>248.      928B        0</span></span></code></pre></div>
 <p><code><a href="../reference/print_hand_df.html">print_hand_df()</a></code> is 14-15 times slower than the integer
 approach.</p>
 </div>
@@ -169,12 +169,12 @@ and with randomly selected hands:</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                   min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand_df(test_hand)   55.9µs   59.2µs    <span style="text-decoration: underline;">16</span>545.      37KB     14.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand_df(test_hand)   56.3µs   60.4µs    <span style="text-decoration: underline;">16</span>320.      37KB     14.4</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="../reference/eval_hand_df.html">eval_hand_df</a></span><span class="op">(</span><span class="fu"><a href="../reference/deal_hand_df.html">deal_hand_df</a></span><span class="op">(</span><span class="va">deck</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                            min  median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:t&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand_df(deal_hand_df(deck))   63.5µs  77.9µs    <span style="text-decoration: underline;">12</span>714.      264B     12.3</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand_df(deal_hand_df(deck))   63.1µs    80µs    <span style="text-decoration: underline;">12</span>366.      264B     12.3</span></span></code></pre></div>
 <p>As expected for a naive poker hand evaluator, performance of
 <code><a href="../reference/eval_hand_df.html">eval_hand_df()</a></code> is poor compared to fast algorithms.</p>
 </div>
@@ -203,12 +203,12 @@ derived using integer division and modulo arithmetic respectively,and
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                             min median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                         <span style="color: #949494; font-style: italic;">&lt;bch:t&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> rle(sort(sample(0:51, 5)%/%4 + 1))  20.6µs 22.1µs    <span style="text-decoration: underline;">43</span>791.      264B     13.1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> rle(sort(sample(0:51, 5)%/%4 + 1))  20.5µs 21.9µs    <span style="text-decoration: underline;">44</span>963.      264B     13.5</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tabulate.html" class="external-link">tabulate</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">51</span>, <span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html" class="external-link">%/%</a></span> <span class="fl">4</span> <span class="op">+</span> <span class="fl">1</span>, <span class="fl">13</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                             min median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> tabulate(sample(0:51, 5)%/%4 + 1, … 2.95µs 3.28µs   <span style="text-decoration: underline;">286</span>697.      264B        0</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> tabulate(sample(0:51, 5)%/%4 + 1, … 2.95µs 3.24µs   <span style="text-decoration: underline;">300</span>685.      264B     30.1</span></span></code></pre></div>
 <p>Note that the tabulate approach is 7 times faster than sorting and
 run length encoding.</p>
 </div>
@@ -229,12 +229,12 @@ run length encoding.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression         min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> new_deck_df()   20.3µs   21.6µs    <span style="text-decoration: underline;">44</span>800.    1.25KB     13.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> new_deck_df()   20.3µs   21.6µs    <span style="text-decoration: underline;">45</span>423.    1.25KB     13.6</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="../reference/new_deck.html">new_deck</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression      min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> new_deck()     41ns     82ns 12<span style="text-decoration: underline;">018</span>277.        0B        0</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> new_deck()        0     82ns 13<span style="text-decoration: underline;">364</span>698.        0B        0</span></span></code></pre></div>
 <p><code><a href="../reference/new_deck.html">new_deck()</a></code> is 90 times faster.</p>
 </div>
 <div class="section level3">
@@ -247,12 +247,12 @@ run length encoding.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                 min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> deal_hand_df(deck_df)   18.2µs   19.6µs    <span style="text-decoration: underline;">50</span>371.      264B     15.1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> deal_hand_df(deck_df)   18.2µs   19.4µs    <span style="text-decoration: underline;">50</span>958.      264B     15.3</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="../reference/deal_hand.html">deal_hand</a></span><span class="op">(</span><span class="va">deck</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression           min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> deal_hand(deck)   2.25µs   2.54µs   <span style="text-decoration: underline;">381</span>641.    3.02KB     38.2</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> deal_hand(deck)    2.3µs   2.54µs   <span style="text-decoration: underline;">380</span>449.    3.02KB        0</span></span></code></pre></div>
 <p><code><a href="../reference/deal_hand.html">deal_hand()</a></code> is about 6 times faster.</p>
 </div>
 <div class="section level3">
@@ -268,12 +268,12 @@ run length encoding.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                       min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> print_hand_df(test_hand_df)   79.8µs   85.2µs    <span style="text-decoration: underline;">11</span>356.        0B     14.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> print_hand_df(test_hand_df)   80.4µs   84.9µs    <span style="text-decoration: underline;">11</span>581.        0B     14.5</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="../reference/print_hand.html">print_hand</a></span><span class="op">(</span><span class="va">test_hand</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                 min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> print_hand(test_hand)   5.62µs   5.95µs   <span style="text-decoration: underline;">162</span>062.    8.45KB        0</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> print_hand(test_hand)   5.62µs   5.95µs   <span style="text-decoration: underline;">163</span>167.    8.45KB        0</span></span></code></pre></div>
 <p><code><a href="../reference/print_hand.html">print_hand()</a></code> is 16 times faster.</p>
 </div>
 <div class="section level3">
@@ -286,12 +286,12 @@ run length encoding.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                      min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand_df(test_hand_df)   51.3µs   54.9µs    <span style="text-decoration: underline;">17</span>933.        0B     14.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand_df(test_hand_df)   56.3µs   59.3µs    <span style="text-decoration: underline;">16</span>646.        0B     14.4</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="../reference/eval_hand.html">eval_hand</a></span><span class="op">(</span><span class="va">test_hand</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(test_hand)   2.09µs   2.38µs   <span style="text-decoration: underline;">401</span>314.    27.5KB        0</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(test_hand)   2.13µs   2.38µs   <span style="text-decoration: underline;">408</span>740.    27.5KB        0</span></span></code></pre></div>
 <p><code><a href="../reference/eval_hand.html">eval_hand()</a></code> is 20 times faster, but should perform
 poorly compared to fast algorithms.</p>
 </div>
@@ -310,7 +310,7 @@ poorly compared to fast algorithms.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                             min median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> { deck &lt;- new_deck_df() replicate(… 8.05ms 8.53ms      117.    34.2KB     16.1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> { deck &lt;- new_deck_df() replicate(… 7.93ms 8.35ms      120.    34.2KB     16.1</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>  <span class="va">deck</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/new_deck.html">new_deck</a></span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">replicate</a></span><span class="op">(</span><span class="fl">50</span>, <span class="op">{</span></span>
@@ -321,7 +321,7 @@ poorly compared to fast algorithms.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                             min median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                           <span style="color: #949494; font-style: italic;">&lt;bch&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> { deck &lt;- new_deck() replicate(50, … 611µs  655µs     <span style="text-decoration: underline;">1</span>517.      74KB     8.36</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> { deck &lt;- new_deck() replicate(50, … 607µs  651µs     <span style="text-decoration: underline;">1</span>533.      74KB     8.34</span></span></code></pre></div>
 <p>Overall, the new implementation is 13-14 times faster.</p>
 </div>
 </div>
@@ -341,12 +341,12 @@ using <a href="https://rstudio.github.io/reticulate/index.html" class="external-
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression           min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> deal_hand(deck)   2.25µs   2.54µs   <span style="text-decoration: underline;">374</span>020.      264B     37.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> deal_hand(deck)   2.25µs   2.54µs   <span style="text-decoration: underline;">382</span>791.      264B        0</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="va">phevaluator</span><span class="op">$</span><span class="fu">sample_cards</span><span class="op">(</span><span class="fl">5L</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                        min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> phevaluator$sample_cards(5L)   24.5µs     26µs    <span style="text-decoration: underline;">37</span>281.        0B     3.73</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> phevaluator$sample_cards(5L)   24.5µs   25.6µs    <span style="text-decoration: underline;">38</span>316.        0B     7.66</span></span></code></pre></div>
 <p><code>phevaluator$sample_cards()</code> is 13 times slower than than
 the R integer implementation.</p>
 <p>Also test <code>phevaluator$evaluate_card()</code> against the R
@@ -357,12 +357,12 @@ integers passed as individual parameters.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(test_hand)   2.09µs    2.3µs   <span style="text-decoration: underline;">420</span>620.        0B        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(test_hand)   2.13µs   2.34µs   <span style="text-decoration: underline;">415</span>141.        0B        0</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/do.call.html" class="external-link">do.call</a></span><span class="op">(</span><span class="va">phevaluator</span><span class="op">$</span><span class="va">evaluate_cards</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">as.list</a></span><span class="op">(</span><span class="va">test_hand</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                             min median `itr/sec` mem_alloc `gc/sec`</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                           <span style="color: #949494; font-style: italic;">&lt;bch&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> do.call(phevaluator$evaluate_cards,…  27µs 28.3µs    <span style="text-decoration: underline;">34</span>509.        0B     6.90</span></span></code></pre></div>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> do.call(phevaluator$evaluate_cards… 26.9µs 28.1µs    <span style="text-decoration: underline;">34</span>834.        0B     6.97</span></span></code></pre></div>
 <p>Surprisingly, <code>phevaluator</code> is almost as slow as the
 original data frame implementation. Test again using some specific hands
 and avoid the overhead of <code><a href="https://rdrr.io/r/base/do.call.html" class="external-link">do.call()</a></code> and
@@ -375,23 +375,23 @@ and avoid the overhead of <code><a href="https://rdrr.io/r/base/do.call.html" cl
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(four_aces)   1.02µs   1.11µs   <span style="text-decoration: underline;">805</span>002.        0B     80.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(four_aces)   1.07µs   1.15µs   <span style="text-decoration: underline;">842</span>025.        0B        0</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="va">phevaluator</span><span class="op">$</span><span class="fu">evaluate_cards</span><span class="op">(</span><span class="fl">51L</span>, <span class="fl">50L</span>, <span class="fl">49L</span>, <span class="fl">48L</span>, <span class="fl">47L</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                             min median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> phevaluator$evaluate_cards(51L, 50… 24.8µs 26.4µs    <span style="text-decoration: underline;">37</span>034.        0B     7.41</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> phevaluator$evaluate_cards(51L, 50… 24.8µs 25.9µs    <span style="text-decoration: underline;">38</span>062.        0B     7.61</span></span>
 <span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="../reference/eval_hand.html">eval_hand</a></span><span class="op">(</span><span class="va">royal_flush</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                  min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(royal_flush)    1.8µs   1.97µs   <span style="text-decoration: underline;">481</span>116.        0B        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(royal_flush)   1.84µs   2.05µs   <span style="text-decoration: underline;">469</span>090.        0B        0</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="va">phevaluator</span><span class="op">$</span><span class="fu">evaluate_cards</span><span class="op">(</span><span class="fl">50L</span>, <span class="fl">46L</span>, <span class="fl">42L</span>, <span class="fl">38L</span>, <span class="fl">34L</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                             min median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> phevaluator$evaluate_cards(50L, 46… 24.3µs 25.7µs    <span style="text-decoration: underline;">38</span>166.        0B     7.63</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> phevaluator$evaluate_cards(50L, 46… 24.4µs 25.4µs    <span style="text-decoration: underline;">38</span>781.        0B     7.76</span></span></code></pre></div>
 <p>Calling <code>evaluate_cards()</code> directly doesn’t significantly
 change the results. Test once more with random hands:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
@@ -399,12 +399,12 @@ change the results. Test once more with random hands:</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                      min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(deal_hand(deck))   3.85µs   4.92µs   <span style="text-decoration: underline;">201</span>797.      264B     20.2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(deal_hand(deck))   3.77µs   4.92µs   <span style="text-decoration: underline;">204</span>364.      264B        0</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/do.call.html" class="external-link">do.call</a></span><span class="op">(</span><span class="va">phevaluator</span><span class="op">$</span><span class="va">evaluate_cards</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">as.list</a></span><span class="op">(</span><span class="fu"><a href="../reference/deal_hand.html">deal_hand</a></span><span class="op">(</span><span class="va">deck</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                             min median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> do.call(phevaluator$evaluate_cards… 30.4µs 31.8µs    <span style="text-decoration: underline;">30</span>533.      264B     9.16</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> do.call(phevaluator$evaluate_cards… 29.9µs 31.3µs    <span style="text-decoration: underline;">31</span>296.      264B     9.39</span></span></code></pre></div>
 <p>Conclusion: using <code>phevaluator</code> via
 <code><a href="https://rstudio.github.io/reticulate/reference/import.html" class="external-link">reticulate::import()</a></code> is not a faster way to evaluate hands.
 It is important to note that <code>phevaluator$evaluate_cards()</code>
@@ -432,12 +432,12 @@ which uses <code>EvaluateCards()</code> and
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(test_hand)   2.09µs   2.34µs   <span style="text-decoration: underline;">384</span>970.        0B     38.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand(test_hand)   2.09µs   2.34µs   <span style="text-decoration: underline;">411</span>985.        0B     41.2</span></span>
 <span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span><span class="fu"><a href="../reference/eval_hand_phe.html">eval_hand_phe</a></span><span class="op">(</span><span class="va">test_hand</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
 <span><span class="co">#&gt;   expression                    min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand_phe(test_hand)    574ns    697ns  1<span style="text-decoration: underline;">407</span>129.    2.23KB        0</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> eval_hand_phe(test_hand)    615ns    697ns  1<span style="text-decoration: underline;">386</span>481.    2.23KB        0</span></span></code></pre></div>
 <p>Somewhat surprisingly, <code><a href="../reference/eval_hand_phe.html">eval_hand_phe()</a></code> is only 2 times
 faster than <code><a href="../reference/eval_hand.html">eval_hand()</a></code>, however,
 <code><a href="../reference/eval_hand_phe.html">eval_hand_phe()</a></code> doesn’t just evaluate hand rank category,
