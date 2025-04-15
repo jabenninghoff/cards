@@ -23,6 +23,7 @@ Suggests:
     pkgdown,
     pkgload,
     rdev (>= 1.5.8),
+    renv,
     reticulate,
     rmarkdown,
     spelling,
