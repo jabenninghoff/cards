@@ -1,3 +1,7 @@
+# cards 0.3.10
+
+* Updated for R 4.5.0
+
 # cards 0.3.9
 
 * Added `tools/distclean.sh`: script to clean Python and Rcpp environments
