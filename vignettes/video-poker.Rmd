@@ -79,8 +79,7 @@ payout <- hands |>
 Filter only Royal Flushes:
 
 ```{r royal_flush}
-payout |>
-  filter(payout == 800)
+filter(payout, payout == 800)
 ```
 
 Calculate the total payout, and percentage return:
