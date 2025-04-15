@@ -64,7 +64,7 @@ bench::mark(print_hand_df(test_hand))
 
 print_hand_int <- function(h) {
   cards <- paste0(rep(c(2:9, "T", "J", "Q", "K", "A"), each = 4), c("C", "D", "H", "S"))
-  paste0(cards[h + 1], collapse = " ")
+  paste(cards[h + 1], collapse = " ")
 }
 test_hand_int <- sample(0:51, 5)
 bench::mark(print_hand_int(test_hand_int))

@@ -52,7 +52,7 @@ print_hand_df <- function(h, collapse = TRUE) {
   h <- h[order(h$rank), ]
   p <- vapply(1:5, function(x) paste0(h[[x, "rank"]], h[[x, "suit"]]), character(1))
   if (collapse) {
-    return(paste0(p, collapse = " "))
+    return(paste(p, collapse = " "))
   } else {
     return(p)
   }
@@ -82,6 +82,7 @@ eval_hand_df <- function(h) { # nolint: cyclocomp_linter.
   is_straight <- (length(r$values) == 5 && r$values[[5]] - r$values[[1]] == 4L) ||
     (length(r$values) == 5 && r$values[[5]] == 13L && r$values[[4]] == 4L) # ace low
 
+  # nolint start: return_linter. explicit returns used for clarity.
   if (is_flush && is_straight && r$values[[1]] == 9L) {
     return("royal_flush")
   } else if (is_flush && is_straight) {
@@ -106,4 +107,5 @@ eval_hand_df <- function(h) { # nolint: cyclocomp_linter.
   } else {
     return("high_card")
   }
+  # nolint end
 }

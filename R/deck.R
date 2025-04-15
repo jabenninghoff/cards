@@ -65,7 +65,7 @@ print_hand <- function(hand, collapse = TRUE) {
   cards <- paste0(rep(c(2:9, "T", "J", "Q", "K", "A"), each = 4), c("C", "D", "H", "S"))
   h <- cards[hand + 1]
   if (collapse) {
-    return(paste0(h, collapse = " "))
+    return(paste(h, collapse = " "))
   } else {
     return(h)
   }
@@ -85,24 +85,24 @@ print_hand <- function(hand, collapse = TRUE) {
 #' eval_hand(hand)
 #' @export
 eval_hand <- function(hand) { # nolint: cyclocomp_linter.
-  rank <- hand %/% 4
-  rank_tab <- tabulate(rank + 1, 13)
+  c_rank <- hand %/% 4
+  c_rank_tab <- tabulate(c_rank + 1, 13)
 
-  m <- max(rank_tab)
+  m <- max(c_rank_tab)
   if (m == 4) {
     return("four_ofakind")
   }
   if (m == 3) {
-    if (sum(rank_tab == 2) == 1) {
+    if (sum(c_rank_tab == 2) == 1) {
       return("full_house")
     } else {
       return("three_ofakind")
     }
   }
   if (m == 2) {
-    if (sum(rank_tab == 2) == 2) {
+    if (sum(c_rank_tab == 2) == 2) {
       return("two_pair")
-    } else if (any(rank_tab[10:13] == 2)) {
+    } else if (any(c_rank_tab[10:13] == 2)) {
       return("jacks_better")
     } else {
       return("one_pair")
@@ -110,12 +110,12 @@ eval_hand <- function(hand) { # nolint: cyclocomp_linter.
   }
 
   is_flush <- all(hand[1] %% 4 == hand %% 4)
-  is_straight <- (max(rank_tab) == 1 && (max(rank) - min(rank) == 4)) ||
+  is_straight <- (max(c_rank_tab) == 1 && (max(c_rank) - min(c_rank) == 4)) ||
     # ace low
-    all(rank_tab == c(1L, 1L, 1L, 1L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 1L))
+    all(c_rank_tab == c(1L, 1L, 1L, 1L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 1L))
 
   if (is_flush && is_straight) {
-    if (min(rank) == 8) {
+    if (min(c_rank) == 8) {
       return("royal_flush")
     } else {
       return("straight_flush")
@@ -128,5 +128,5 @@ eval_hand <- function(hand) { # nolint: cyclocomp_linter.
     return("straight")
   }
 
-  return("high_card")
+  return("high_card") # nolint: return_linter. explicit return used for clarity.
 }
