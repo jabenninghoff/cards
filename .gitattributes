@@ -8,3 +8,8 @@ tests/testthat/test-spelling.R linguist-vendored
 _freeze/** linguist-generated
 
 # local overrides
+RcppExports.* linguist-generated
+src/*.c linguist-vendored
+src/*.cc linguist-vendored
+src/*.h linguist-vendored
+inst/include/phevaluator/* linguist-vendored
