@@ -1,3 +1,7 @@
+# cards 0.3.13
+
+* Corrected GitHub language stats
+
 # cards 0.3.12
 
 * Maintenance update
