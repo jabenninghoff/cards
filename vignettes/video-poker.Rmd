@@ -7,7 +7,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r}
+#| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -22,7 +23,10 @@ video poker. As the linked article notes:
 following paytable, per coin based on five coins bet, which returns 99.54% of money bet assuming
 optimal strategy.
 
-```{r setup, message = FALSE, warning = FALSE}
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
 library(cards)
 library(tibble)
 library(dplyr)
@@ -35,7 +39,8 @@ runs <- 2e6
 
 Run simple simulations with a single hand, without drawing new cards.
 
-```{r hands}
+```{r}
+#| label: hands
 hands <- replicate(runs, eval_hand(deal_hand(deck)))
 ```
 
@@ -58,7 +63,8 @@ Jacks or Better 1
 
 Payout is per coin when betting 5 coins.
 
-```{r payout}
+```{r}
+#| label: payout
 payout <- hands |>
   as_tibble_col(column_name = "hand") |>
   mutate(payout = case_match(
@@ -78,7 +84,8 @@ payout <- hands |>
 
 Filter only Royal Flushes:
 
-```{r royal_flush}
+```{r}
+#| label: royal_flush
 filter(payout, payout == 800)
 ```
 

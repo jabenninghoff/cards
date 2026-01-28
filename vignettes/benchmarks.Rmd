@@ -7,7 +7,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r}
+#| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -16,7 +17,10 @@ knitr::opts_chunk$set(
 
 Measure the performance of different implementations of `cards` using `bench::mark()`.
 
-```{r setup, message = FALSE, warning = FALSE}
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
 library(cards)
 library(reticulate)
 
@@ -33,7 +37,8 @@ to [PH Evaluator](https://github.com/HenryRLee/PokerHandEvaluator)
 
 Create a new deck using `new_deck_df()` and an integer vector.
 
-```{r new_deck_df}
+```{r}
+#| label: new_deck_df
 deck <- new_deck_df()
 deck_int <- 0:51
 bench::mark(new_deck_df())
@@ -47,7 +52,8 @@ faster.
 
 Compare performance of `deal_hand_df()` to sampling integers:
 
-```{r deal_hand_df}
+```{r}
+#| label: deal_hand_df
 bench::mark(deal_hand_df(deck))
 bench::mark(sample(deck_int, 5))
 ```
@@ -58,7 +64,8 @@ bench::mark(sample(deck_int, 5))
 
 Test performance of `print_hand_df()` against a simple function that prints cards based on integers.
 
-```{r print_hand_df}
+```{r}
+#| label: print_hand_df
 test_hand <- deal_hand_df(deck)
 bench::mark(print_hand_df(test_hand))
 
@@ -76,7 +83,8 @@ bench::mark(print_hand_int(test_hand_int))
 
 Test performance of `eval_hand_df()` with a single hand and with randomly selected hands:
 
-```{r eval_hand_df}
+```{r}
+#| label: eval_hand_df
 bench::mark(eval_hand_df(test_hand))
 bench::mark(eval_hand_df(deal_hand_df(deck)))
 ```
@@ -90,7 +98,8 @@ An implementation using integer would likely be much faster than the first imple
 `data.frame`. Rank and suit can be derived using integer division and modulo arithmetic
 respectively,and `tabulate()` is a faster replacement for `rle()`.
 
-```{r rle_tabulate}
+```{r}
+#| label: rle_tabulate
 0:51 %/% 4
 tabulate(0:51 %/% 4 + 1, 13)
 0:51 %% 4
@@ -110,7 +119,8 @@ Benchmark the second implementation using `integer()`.
 
 Create a new deck using `new_deck()` and `new_deck_df()`.
 
-```{r new_deck}
+```{r}
+#| label: new_deck
 deck_df <- new_deck_df()
 deck <- new_deck()
 bench::mark(new_deck_df())
@@ -123,7 +133,8 @@ bench::mark(new_deck())
 
 Compare performance of `deal_hand_df()` and `deal_hand()`
 
-```{r deal_hand}
+```{r}
+#| label: deal_hand
 bench::mark(deal_hand_df(deck_df))
 bench::mark(deal_hand(deck))
 ```
@@ -134,7 +145,8 @@ bench::mark(deal_hand(deck))
 
 Test performance of `print_hand_df()` against `print_hand()`.
 
-```{r print_hand}
+```{r}
+#| label: print_hand
 test_hand_df <- deal_hand_df(deck_df)
 test_hand <- deal_hand(deck)
 
@@ -148,7 +160,8 @@ bench::mark(print_hand(test_hand))
 
 Test performance of `eval_hand_df()` and `eval_hand()` with a single hand.
 
-```{r eval_hand}
+```{r}
+#| label: eval_hand
 bench::mark(eval_hand_df(test_hand_df))
 bench::mark(eval_hand(test_hand))
 ```
@@ -159,7 +172,8 @@ bench::mark(eval_hand(test_hand))
 
 Compare performance evaluating and printing multiple hands.
 
-```{r readme}
+```{r}
+#| label: readme
 bench::mark({
   deck <- new_deck_df()
   replicate(50, {
@@ -188,7 +202,8 @@ Benchmark the `integer()` approach to
 
 Test performance of `phevaluator` using `reticulate::import()`, starting with `sample_cards()`:
 
-```{r sample_cards}
+```{r}
+#| label: sample_cards
 bench::mark(deal_hand(deck))
 bench::mark(phevaluator$sample_cards(5L))
 ```
@@ -198,7 +213,8 @@ bench::mark(phevaluator$sample_cards(5L))
 Also test `phevaluator$evaluate_card()` against the R integer method. `evaluate_card()` expects five
 to seven integers passed as individual parameters.
 
-```{r evaluate_card}
+```{r}
+#| label: evaluate_card
 bench::mark(eval_hand(test_hand))
 bench::mark(do.call(phevaluator$evaluate_cards, as.list(test_hand)))
 ```
@@ -206,7 +222,8 @@ bench::mark(do.call(phevaluator$evaluate_cards, as.list(test_hand)))
 Surprisingly, `phevaluator` is almost as slow as the original data frame implementation. Test again
 using some specific hands and avoid the overhead of `do.call()` and `as.list()`:
 
-```{r royal_flush}
+```{r}
+#| label: royal_flush
 four_aces <- c(51L, 50L, 49L, 48L, 47L)
 royal_flush <- c(50L, 46L, 42L, 38L, 34L)
 
@@ -220,7 +237,8 @@ bench::mark(phevaluator$evaluate_cards(50L, 46L, 42L, 38L, 34L))
 Calling `evaluate_cards()` directly doesn't significantly change the results. Test once more with
 random hands:
 
-```{r random_hands}
+```{r}
+#| label: random_hands
 bench::mark(eval_hand(deal_hand(deck)))
 bench::mark(do.call(phevaluator$evaluate_cards, as.list(deal_hand(deck))))
 ```
@@ -241,7 +259,8 @@ The current version only implements `eval_hand_phe()`, which uses `EvaluateCards
 
 Test performance of `eval_hand()` and `eval_hand_phe()` with a single hand:
 
-```{r eval_hand_phe}
+```{r}
+#| label: eval_hand_phe
 bench::mark(eval_hand(test_hand))
 bench::mark(eval_hand_phe(test_hand))
 ```
