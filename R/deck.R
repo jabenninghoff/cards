@@ -65,9 +65,9 @@ print_hand <- function(hand, collapse = TRUE) {
   cards <- paste0(rep(c(2:9, "T", "J", "Q", "K", "A"), each = 4), c("C", "D", "H", "S"))
   h <- cards[hand + 1]
   if (collapse) {
-    return(paste(h, collapse = " "))
+    paste(h, collapse = " ")
   } else {
-    return(h)
+    h
   }
 }
 

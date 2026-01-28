@@ -52,9 +52,9 @@ print_hand_df <- function(h, collapse = TRUE) {
   h <- h[order(h$rank), ]
   p <- vapply(1:5, function(x) paste0(h[[x, "rank"]], h[[x, "suit"]]), character(1))
   if (collapse) {
-    return(paste(p, collapse = " "))
+    paste(p, collapse = " ")
   } else {
-    return(p)
+    p
   }
 }
 
