@@ -276,6 +276,6 @@ more importantly, the additional call to `describeCategory()`, as the benchmark
 calls `EvaluateCards()`.
 
 A future implementation could implement the full `pheval` libraries and the C++ code in
-[`card_sampler.h`](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/benchmark/card_sampler.h)
+[`card_sampler.h`](https://github.com/HenryRLee/PokerHandEvaluator/blob/ffb651afb6fec14c892c7e09f67c1450529acbc5/cpp/benchmark/card_sampler.h)
 to generate random hands in a standalone R package using
 [Rcpp Modules](https://CRAN.R-project.org/package=Rcpp/vignettes/Rcpp-modules.pdf).
