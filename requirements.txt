@@ -1,5 +1,4 @@
-numpy==2.4.1
-packaging==26.0
-phevaluator==0.5.3.1
-setuptools==80.10.2
-wheel==0.46.3
+packaging==26.3
+phevaluator==0.6.0
+setuptools==84.0.0
+wheel==0.48.0
