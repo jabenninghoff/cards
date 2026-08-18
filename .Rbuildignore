@@ -1,6 +1,8 @@
 ^_pkgdown\.yml$
+^\.claude$
 ^\.github$
 ^\.lintr$
+^\.positai$
 ^\.python-version$
 ^\.Rproj\.user$
 ^cards\.Rproj$
