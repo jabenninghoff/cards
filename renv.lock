@@ -4,7 +4,7 @@
     "Repositories": [
       {
         "Name": "CRAN",
-        "URL": "https://packagemanager.posit.co/cran/2026-08-10"
+        "URL": "https://packagemanager.posit.co/cran/2026-08-25"
       }
     ]
   },
@@ -1552,7 +1552,7 @@
     },
     "gert": {
       "Package": "gert",
-      "Version": "2.4.0",
+      "Version": "2.4.1",
       "Source": "Repository",
       "Type": "Package",
       "Title": "Simple Git Client for R",
@@ -3413,7 +3413,7 @@
     },
     "rdev": {
       "Package": "rdev",
-      "Version": "1.19.0",
+      "Version": "1.19.6",
       "Source": "GitHub",
       "Title": "R Development Tools",
       "Authors@R": "person(\"John\", \"Benninghoff\", , \"jbenninghoff@mac.com\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-6230-4742\"))",
@@ -3454,7 +3454,7 @@
         "stringr",
         "styler (>= 1.4.0)",
         "tibble",
-        "urlchecker",
+        "urlchecker (>= 2.0.0)",
         "usethis",
         "utils",
         "withr",
@@ -3486,7 +3486,7 @@
       "RemoteUsername": "jabenninghoff",
       "RemoteRepo": "rdev",
       "RemoteRef": "main",
-      "RemoteSha": "174c759c3002c3f20b1e35be11062a0de19c1f8c"
+      "RemoteSha": "f704f31f38d3bb139f74acd0a40f9d9533de89b0"
     },
     "rdtools": {
       "Package": "rdtools",
