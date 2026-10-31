@@ -1,3 +1,7 @@
+# cards 0.3.17
+
+* Upkeep 2026-10
+
 # cards 0.3.16
 
 * Update R-CMD-check to run on macOS only
